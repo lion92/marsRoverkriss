@@ -25,7 +25,7 @@ public class RoverTest {
         Rover roverFinal = new Rover(positionFinal, "" + Direction.N);
 
 
-        assertThat(roverInitial.moveTo(roverInitial, "" + Move.F)).isEqualTo(roverFinal);
+        assertThat(roverInitial.moveTo( "" + Move.F)).isEqualTo(roverFinal);
 
     }
 
@@ -38,7 +38,7 @@ public class RoverTest {
         Rover roverFinal = new Rover(positionFinal, "" + Direction.E);
 
 
-        assertThat(roverInitial.moveTo(roverInitial, "" + Move.F)).isEqualTo(roverFinal);
+        assertThat(roverInitial.moveTo( "" + Move.F)).isEqualTo(roverFinal);
     }
 
     @Test
@@ -50,7 +50,7 @@ public class RoverTest {
         Rover roverFinal = new Rover(positionFinal, "" + Direction.E);
 
 
-        assertThat(roverInitial.moveTo(roverInitial, "" + Move.F)).isEqualTo(roverFinal);
+        assertThat(roverInitial.moveTo( "" + Move.F)).isEqualTo(roverFinal);
     }
 
 
@@ -63,7 +63,7 @@ public class RoverTest {
         Rover roverFinal = new Rover(positionFinal, "" + Direction.S);
 
 
-        assertThat(roverInitial.moveTo(roverInitial, "" + Move.F)).isEqualTo(roverFinal);
+        assertThat(roverInitial.moveTo( "" + Move.F)).isEqualTo(roverFinal);
     }
 
     @Test
@@ -75,7 +75,7 @@ public class RoverTest {
         Rover roverFinal = new Rover(positionFinal, "" + Direction.S);
 
 
-        assertThat(roverInitial.moveTo(roverInitial, "" + Move.B)).isEqualTo(roverFinal);
+        assertThat(roverInitial.moveTo( "" + Move.B)).isEqualTo(roverFinal);
     }
 
 
@@ -88,7 +88,7 @@ public class RoverTest {
         Rover roverFinal = new Rover(positionFinal, "" + Direction.W);
 
 
-        assertThat(roverInitial.moveTo(roverInitial, "" + Move.F)).isEqualTo(roverFinal);
+        assertThat(roverInitial.moveTo( "" + Move.F)).isEqualTo(roverFinal);
     }
 
 
@@ -101,7 +101,7 @@ public class RoverTest {
         Rover roverFinal = new Rover(positionFinal, "" + Direction.W);
 
 
-        assertThat(roverInitial.moveTo(roverInitial, "" + Move.L)).isEqualTo(roverFinal);
+        assertThat(roverInitial.moveTo( "" + Move.L)).isEqualTo(roverFinal);
     }
 
 
@@ -114,7 +114,7 @@ public class RoverTest {
         Rover roverFinal = new Rover(positionFinal, "" + Direction.S);
 
 
-        assertThat(roverInitial.moveTo(roverInitial, "" + Move.L)).isEqualTo(roverFinal);
+        assertThat(roverInitial.moveTo("" + Move.L)).isEqualTo(roverFinal);
     }
 
     @Test
@@ -126,7 +126,7 @@ public class RoverTest {
         Rover roverFinal = new Rover(positionFinal, "" + Direction.W);
 
 
-        assertThat(roverInitial.moveTo(roverInitial, "" + Move.L)).isEqualTo(roverFinal);
+        assertThat(roverInitial.moveTo( "" + Move.L)).isEqualTo(roverFinal);
     }
 
     @Test
@@ -138,7 +138,7 @@ public class RoverTest {
         Rover roverFinal = new Rover(positionFinal, "" + Direction.W);
 
 
-        assertThat(roverInitial.moveTo(roverInitial, "" + Move.R)).isEqualTo(roverFinal);
+        assertThat(roverInitial.moveTo( "" + Move.R)).isEqualTo(roverFinal);
     }
 
     @Test
@@ -150,7 +150,7 @@ public class RoverTest {
         Rover roverFinal = new Rover(positionFinal, "" + Direction.S);
 
 
-        assertThat(roverInitial.moveTo(roverInitial, "" + Move.R)).isEqualTo(roverFinal);
+        assertThat(roverInitial.moveTo( "" + Move.R)).isEqualTo(roverFinal);
     }
 
     @Test
@@ -162,7 +162,7 @@ public class RoverTest {
         Rover roverFinal = new Rover(positionFinal, "" + Direction.E);
 
 
-        assertThat(roverInitial.moveTo(roverInitial, "" + Move.R)).isEqualTo(roverFinal);
+        assertThat(roverInitial.moveTo( "" + Move.R)).isEqualTo(roverFinal);
     }
 
     @Test
@@ -174,7 +174,7 @@ public class RoverTest {
         Rover roverFinal = new Rover(positionFinal, "" + Direction.N);
 
 
-        assertThat(roverInitial.moveTo(roverInitial, "" + Move.R)).isEqualTo(roverFinal);
+        assertThat(roverInitial.moveTo( "" + Move.R)).isEqualTo(roverFinal);
     }
 
 
