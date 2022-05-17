@@ -14,14 +14,10 @@ public class DirectionRoverNorth extends AbstractDirection {
         } else if (initial.getDirection().equals("" + Direction.E) && move.equals("" + Move.R)) {
             return new Rover(new PointRover(initial.getXi(), initial.getYi()), "" + Direction.N);
         } else if (move.equals("" + Move.F)) {
-
             return new Rover(new PointRover(initial.getXi(), initial.getYi() + 1), "" + initial.getDirection());
         } else if (move.equals("" + Move.B)) {
-
             return new Rover(new PointRover(initial.getXi(), initial.getYi() - 1), "" + initial.getDirection());
         }
         return initial;
-
-
     }
 }
