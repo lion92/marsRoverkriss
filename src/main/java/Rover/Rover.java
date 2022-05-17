@@ -55,6 +55,18 @@ public class Rover {
         else if(initial.direction.equals(""+Direction.S)&&move.equals(""+Move.L)){
             return new DirectionRoverWest().moveTo(initial,move);
         }
+        else if(initial.direction.equals(""+Direction.N)&&move.equals((""+Move.R))){
+            return new DirectionRoverWest().moveTo(initial,move);
+        }
+        else if(initial.direction.equals(""+Direction.W)&&move.equals((""+Move.R))){
+            return new DirectionRoverSouth().moveTo(initial,move);
+        }
+        else if(initial.direction.equals(""+Direction.S)&&move.equals((""+Move.R))){
+            return new DirectionRoverEast().moveTo(initial,move);
+        }
+        else if(initial.direction.equals(""+Direction.E)&&move.equals((""+Move.R))){
+            return new DirectionRoverNorth().moveTo(initial,move);
+        }
         return new DirectionRoverNorth().moveTo( initial, move);
     }
 
