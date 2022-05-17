@@ -35,28 +35,18 @@ public class Rover {
     }
 
     public Rover moveTo(Rover initial, String move) {
-        if (initial.direction.equals("" + Direction.S) && move.equals("" + Move.F)) {
+        if (initial.direction.equals("" + Direction.S) && move.equals("" + Move.F)
+                || initial.direction.equals("" + Direction.E) && move.equals("" + Move.L)
+                || initial.direction.equals("" + Direction.W) && move.equals(("" + Move.R))) {
             return new DirectionRoverSouth().moveTo(initial, move);
-        } else if (initial.direction.equals("" + Direction.W) && move.equals("" + Move.F)) {
+        } else if (initial.direction.equals("" + Direction.W) && move.equals("" + Move.F)
+                || initial.direction.equals("" + Direction.S) && move.equals("" + Move.L)
+                || initial.direction.equals("" + Direction.N) && move.equals("" + Move.R)
+                || initial.direction.equals("" + Direction.S) && move.equals("" + Move.L)) {
             return new DirectionRoverWest().moveTo(initial, move);
-        } else if (initial.direction.equals("" + Direction.E) && move.equals("" + Move.F)) {
+        } else if (initial.direction.equals("" + Direction.E) && move.equals("" + Move.F)
+                || initial.direction.equals("" + Direction.S) && move.equals("" + Move.R)) {
             return new DirectionRoverEast().moveTo(initial, move);
-        } else if (initial.direction.equals("" + Direction.W) && move.equals("" + Move.L)) {
-            return new DirectionRoverNorth().moveTo(initial, move);
-        } else if (initial.direction.equals("" + Direction.S) && move.equals("" + Move.L)) {
-            return new DirectionRoverWest().moveTo(initial, move);
-        } else if (initial.direction.equals("" + Direction.E) && move.equals("" + Move.L)) {
-            return new DirectionRoverSouth().moveTo(initial, move);
-        } else if (initial.direction.equals("" + Direction.S) && move.equals("" + Move.L)) {
-            return new DirectionRoverWest().moveTo(initial, move);
-        } else if (initial.direction.equals("" + Direction.N) && move.equals(("" + Move.R))) {
-            return new DirectionRoverWest().moveTo(initial, move);
-        } else if (initial.direction.equals("" + Direction.W) && move.equals(("" + Move.R))) {
-            return new DirectionRoverSouth().moveTo(initial, move);
-        } else if (initial.direction.equals("" + Direction.S) && move.equals(("" + Move.R))) {
-            return new DirectionRoverEast().moveTo(initial, move);
-        } else if (initial.direction.equals("" + Direction.E) && move.equals(("" + Move.R))) {
-            return new DirectionRoverNorth().moveTo(initial, move);
         }
         return new DirectionRoverNorth().moveTo(initial, move);
     }
