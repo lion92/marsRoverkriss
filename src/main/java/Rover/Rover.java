@@ -55,8 +55,7 @@ public class Rover {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Rover)) return false;
-        Rover rover = (Rover) o;
+        if (!(o instanceof Rover rover)) return false;
         return xi == rover.xi && yi == rover.yi && Objects.equals(direction, rover.direction);
     }
 
