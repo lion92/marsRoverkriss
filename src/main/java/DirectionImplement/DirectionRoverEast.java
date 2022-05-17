@@ -9,7 +9,7 @@ public class DirectionRoverEast extends AbstractDirection {
     @Override
     public Rover moveTo(Rover initial, String move) {
         if (initial.getDirection().equals("" + Direction.S) && move.equals("" + Move.L)) {
-            return new Rover(new PointRover(initial.getXi(), initial.getYi()), "" + Direction.W);
+            return new DirectionRoverWest().moveTo(initial,move);
         } else if (initial.getDirection().equals("" + Direction.S) && move.equals("" + Move.R)) {
             return new Rover(new PointRover(initial.getXi(), initial.getYi()), "" + Direction.E);
         } else if (move.equals("" + Move.F)) {
