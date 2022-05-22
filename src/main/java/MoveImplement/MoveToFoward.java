@@ -1,9 +1,9 @@
-package DirectionImplement;
+package MoveImplement;
 
 import Rover.*;
 import Rover.Exception.DirectionNullException;
 import Rover.Exception.PositionNullException;
-import abstractRover.AbstractMove;
+import abstractMove.AbstractMove;
 
 public class MoveToFoward extends AbstractMove {
 
