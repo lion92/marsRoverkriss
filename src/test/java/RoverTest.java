@@ -206,5 +206,57 @@ public class RoverTest {
                 });
     }
 
+    @Test
+    public void should_return_north_x0_y0_when_it_go_foward_since_the_position_x0_y5_north() throws PositionNullException, DirectionNullException {
+        PointRover positionInitial = new PointRover(0, 5);
+        Rover roverInitial = new Rover(positionInitial,  Direction.Norh);
+
+        PointRover positionFinal = new PointRover(0, 1);
+        Rover roverFinal = new Rover(positionFinal,  Direction.Norh);
+
+
+        assertThat(roverInitial.moveTo( Move.Foward)).isEqualTo(roverFinal);
+    }
+
+    @Test
+    public void should_return_west_x0_y0_when_it_go_foward_since_the_position_x5_y0_west() throws PositionNullException, DirectionNullException {
+        PointRover positionInitial = new PointRover(5, 0);
+        Rover roverInitial = new Rover(positionInitial,  Direction.West);
+
+        PointRover positionFinal = new PointRover(1, 0);
+        Rover roverFinal = new Rover(positionFinal,  Direction.West);
+
+
+        assertThat(roverInitial.moveTo( Move.Foward)).isEqualTo(roverFinal);
+    }
+
+    @Test
+    public void should_return_east_x0_y0_when_it_go_foward_since_the_position_xmoins5_y0_east() throws PositionNullException, DirectionNullException {
+        PointRover positionInitial = new PointRover(-5, 0);
+        Rover roverInitial = new Rover(positionInitial,  Direction.East);
+
+        PointRover positionFinal = new PointRover(-1, 0);
+        Rover roverFinal = new Rover(positionFinal,  Direction.East);
+
+
+        assertThat(roverInitial.moveTo( Move.Foward)).isEqualTo(roverFinal);
+    }
+
+    @Test
+    public void should_return_south_x0_y0_when_it_go_foward_since_the_position_x0_ymoins5_south() throws PositionNullException, DirectionNullException {
+        PointRover positionInitial = new PointRover(0, -5);
+        Rover roverInitial = new Rover(positionInitial,  Direction.South);
+
+        PointRover positionFinal = new PointRover(0, -1);
+        Rover roverFinal = new Rover(positionFinal,  Direction.South);
+
+
+        assertThat(roverInitial.moveTo( Move.Foward)).isEqualTo(roverFinal);
+    }
+
+
+
+
+
 
 }
