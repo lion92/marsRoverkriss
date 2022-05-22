@@ -71,11 +71,11 @@ public class RoverTest {
         PointRover positionInitial = new PointRover(0, -1);
         Rover roverInitial = new Rover(positionInitial,  Direction.S);
 
-        PointRover positionFinal = new PointRover(0, -2);
+        PointRover positionFinal = new PointRover(0, 0);
         Rover roverFinal = new Rover(positionFinal,  Direction.S);
 
 
-        assertThat(roverInitial.moveTo(  Move.B)).isEqualTo(roverFinal);
+        assertThat(roverInitial.moveTo( Move.B)).isEqualTo(roverFinal);
     }
 
 

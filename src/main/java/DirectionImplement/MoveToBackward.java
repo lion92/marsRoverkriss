@@ -7,6 +7,8 @@ import abstractRover.AbstractMove;
 
 public class MoveToBackward extends AbstractMove {
 
+
+
     @Override
     public Rover moveTo(Rover initial) {
 
@@ -15,7 +17,7 @@ public class MoveToBackward extends AbstractMove {
                 return new Rover(new PointRover(initial.getXi() , initial.getYi()-1), initial.getDirection());
             }
             case S -> {
-                return new Rover(new PointRover(initial.getXi() + 1, initial.getYi()+1), initial.getDirection());
+                return new Rover(new PointRover(initial.getXi() , initial.getYi()+1), initial.getDirection());
             }
             case E -> {
                 return new Rover(new PointRover(initial.getXi() +1, initial.getYi()), initial.getDirection());

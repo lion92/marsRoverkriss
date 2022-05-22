@@ -1,9 +1,6 @@
 package Rover;
 
-import DirectionImplement.DirectionRoverEast;
-import DirectionImplement.DirectionRoverNorth;
-import DirectionImplement.DirectionRoverSouth;
-import DirectionImplement.DirectionRoverWest;
+import DirectionImplement.*;
 import DirectionMoveEmum.Direction;
 import DirectionMoveEmum.Move;
 
@@ -35,20 +32,23 @@ public class Rover {
     }
 
     public Rover moveTo(Move move) {
-        if (this.direction.equals( Direction.S) && move.equals(Move.F)
-                || this.direction.equals( Direction.E) && move.equals( Move.L)
-                || this.direction.equals(Direction.W) && move.equals( Move.R)) {
-            return new DirectionRoverSouth().moveTo(this, move);
-        } else if (this.direction.equals(Direction.W) && move.equals( Move.F)
-                || this.direction.equals( Direction.S) && move.equals( Move.L)
-                || this.direction.equals( Direction.N) && move.equals(Move.R)
-                || this.direction.equals( Direction.S) && move.equals( Move.L)) {
-            return new DirectionRoverWest().moveTo(this, move);
-        } else if (this.direction.equals(Direction.E) && move.equals( Move.F)
-                || this.direction.equals( Direction.S) && move.equals( Move.R)) {
-            return new DirectionRoverEast().moveTo(this, move);
-        }
-        return new DirectionRoverNorth().moveTo(this, move);
+
+       switch (move){
+           case F -> {
+               return new MoveToFoward().moveTo(this);
+           }
+           case B -> {
+               return new MoveToBackward().moveTo(this);
+           }
+           case L -> {
+               return new MoveToLeft().moveTo(this);
+           }
+           case R -> {
+               return new MoveToRight().moveTo(this);
+           }
+       }
+       
+        return null;
     }
 
 
