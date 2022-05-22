@@ -3,6 +3,8 @@ package Rover;
 import DirectionImplement.*;
 import DirectionMoveEmum.Direction;
 import DirectionMoveEmum.Move;
+import Rover.Exception.DirectionNullException;
+import Rover.Exception.PositionNullException;
 
 import java.util.Objects;
 
@@ -12,9 +14,17 @@ public class Rover {
 
     private final Direction direction;
 
-    public Rover(PointRover pointInitial, Direction direction) {
+    public Rover(PointRover pointInitial, Direction direction) throws PositionNullException, DirectionNullException {
+        if(pointInitial==null){
+            throw new PositionNullException("Position Null");
+        }
+        if(direction==null){
+            throw new DirectionNullException("Direction null");
+        }
         this.xi = pointInitial.x();
         this.yi = pointInitial.y();
+
+
         this.direction = direction;
 
     }
@@ -31,20 +41,20 @@ public class Rover {
         return direction;
     }
 
-    public Rover moveTo(Move move) {
+    public Rover moveTo(Move move) throws PositionNullException, DirectionNullException {
 
        switch (move){
            case Foward -> {
-               return new MoveToFoward().moveTo(this);
+               return new MoveToFoward().moveFrom(this);
            }
            case Backward -> {
-               return new MoveToBackward().moveTo(this);
+               return new MoveToBackward().moveFrom(this);
            }
            case Left -> {
-               return new MoveToLeft().moveTo(this);
+               return new MoveToLeft().moveFrom(this);
            }
            case Right -> {
-               return new MoveToRight().moveTo(this);
+               return new MoveToRight().moveFrom(this);
            }
        }
 

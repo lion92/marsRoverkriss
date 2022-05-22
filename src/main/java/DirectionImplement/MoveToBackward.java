@@ -1,6 +1,8 @@
 package DirectionImplement;
 
 import Rover.*;
+import Rover.Exception.DirectionNullException;
+import Rover.Exception.PositionNullException;
 import abstractRover.AbstractMove;
 
 public class MoveToBackward extends AbstractMove {
@@ -8,7 +10,7 @@ public class MoveToBackward extends AbstractMove {
 
 
     @Override
-    public Rover moveTo(Rover initial) {
+    public Rover moveFrom(Rover initial) throws PositionNullException, DirectionNullException {
 
         switch (initial.getDirection()) {
             case Norh -> {

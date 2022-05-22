@@ -1,14 +1,13 @@
 package abstractRover;
 
-import DirectionMoveEmum.Move;
-import Rover.Rover;
+import Rover.*;
+import Rover.Exception.DirectionNullException;
+import Rover.Exception.PositionNullException;
 
 public class AbstractMove {
 
-    public Rover moveTo(Rover initial, Move move) {
-        return null;
-    }
-    public Rover moveTo(Rover initial) {
+
+    public Rover moveFrom(Rover initial) throws PositionNullException, DirectionNullException {
         return null;
     }
 }

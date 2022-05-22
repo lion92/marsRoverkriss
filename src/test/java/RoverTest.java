@@ -1,11 +1,14 @@
 
 import DirectionMoveEmum.Direction;
 import DirectionMoveEmum.Move;
+import Rover.Exception.DirectionNullException;
+import Rover.Exception.PositionNullException;
 import Rover.PointRover;
-import Rover.Rover;
+import Rover.*;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 public class RoverTest {
 
@@ -16,7 +19,7 @@ public class RoverTest {
 
 
     @Test
-    public void should_return_north_x0_y1_when_it_go_foward_since_the_position_x0_y0_North() {
+    public void should_return_north_x0_y1_when_it_go_foward_since_the_position_x0_y0_North() throws PositionNullException, DirectionNullException {
 
         PointRover positionInitial = new PointRover(0, 0);
         Rover roverInitial = new Rover(positionInitial,  Direction.Norh);
@@ -30,7 +33,7 @@ public class RoverTest {
     }
 
     @Test
-    public void should_return_east_xmoins1_y0_when_it_go_foward_since_the_position_x0_y0_east() {
+    public void should_return_east_xmoins1_y0_when_it_go_foward_since_the_position_x0_y0_east() throws PositionNullException, DirectionNullException {
         PointRover positionInitial = new PointRover(0, 0);
         Rover roverInitial = new Rover(positionInitial, Direction.East);
 
@@ -42,7 +45,7 @@ public class RoverTest {
     }
 
     @Test
-    public void should_return_east_xmoins2_y0_when_it_go_foward_since_the_position_xmoins1_y0_east() {
+    public void should_return_east_xmoins2_y0_when_it_go_foward_since_the_position_xmoins1_y0_east() throws PositionNullException, DirectionNullException {
         PointRover positionInitial = new PointRover(-1, 0);
         Rover roverInitial = new Rover(positionInitial,  Direction.East);
 
@@ -55,7 +58,7 @@ public class RoverTest {
 
 
     @Test
-    public void should_return_south_x0_ymoins1_when_it_go_backward_since_the_position_x0_y0_South() {
+    public void should_return_south_x0_ymoins1_when_it_go_backward_since_the_position_x0_y0_South() throws PositionNullException, DirectionNullException {
         PointRover positionInitial = new PointRover(0, 0);
         Rover roverInitial = new Rover(positionInitial,  Direction.South);
 
@@ -67,7 +70,7 @@ public class RoverTest {
     }
 
     @Test
-    public void should_return_south_x0_ymoins2_when_it_go_backward_since_the_position_x0_ymoins1_South() {
+    public void should_return_south_x0_ymoins2_when_it_go_backward_since_the_position_x0_ymoins1_South() throws PositionNullException, DirectionNullException {
         PointRover positionInitial = new PointRover(0, -1);
         Rover roverInitial = new Rover(positionInitial,  Direction.South);
 
@@ -80,7 +83,7 @@ public class RoverTest {
 
 
     @Test
-    public void should_return_west_x1_y0_when_it_go_left_since_the_position_x0_y0_West() {
+    public void should_return_west_x1_y0_when_it_go_left_since_the_position_x0_y0_West() throws PositionNullException, DirectionNullException {
         PointRover positionInitial = new PointRover(0, 0);
         Rover roverInitial = new Rover(positionInitial, Direction.West);
 
@@ -93,7 +96,7 @@ public class RoverTest {
 
 
     @Test
-    public void should_return_south_x0_y0_when_it_go_left_since_the_position_x0_y0_West() {
+    public void should_return_south_x0_y0_when_it_go_left_since_the_position_x0_y0_West() throws PositionNullException, DirectionNullException {
         PointRover positionInitial = new PointRover(0, 0);
         Rover roverInitial = new Rover(positionInitial,  Direction.South);
 
@@ -106,7 +109,7 @@ public class RoverTest {
 
 
     @Test
-    public void should_return_south_x0_y0_when_it_go_left_since_the_position_x0_y0_east() {
+    public void should_return_south_x0_y0_when_it_go_left_since_the_position_x0_y0_east() throws PositionNullException, DirectionNullException {
         PointRover positionInitial = new PointRover(0, 0);
         Rover roverInitial = new Rover(positionInitial,  Direction.East);
 
@@ -118,7 +121,7 @@ public class RoverTest {
     }
 
     @Test
-    public void should_return_west_x0_y0_when_it_go_left_since_the_position_x0_y0_south() {
+    public void should_return_west_x0_y0_when_it_go_left_since_the_position_x0_y0_south() throws PositionNullException, DirectionNullException {
         PointRover positionInitial = new PointRover(0, 0);
         Rover roverInitial = new Rover(positionInitial,  Direction.South);
 
@@ -130,7 +133,7 @@ public class RoverTest {
     }
 
     @Test
-    public void should_return_west_x0_y0_when_it_go_right_since_the_position_x0_y0_north() {
+    public void should_return_west_x0_y0_when_it_go_right_since_the_position_x0_y0_north() throws PositionNullException, DirectionNullException {
         PointRover positionInitial = new PointRover(0, 0);
         Rover roverInitial = new Rover(positionInitial, Direction.Norh);
 
@@ -142,7 +145,7 @@ public class RoverTest {
     }
 
     @Test
-    public void should_return_south_x0_y0_when_it_go_right_since_the_position_x0_y0_west() {
+    public void should_return_south_x0_y0_when_it_go_right_since_the_position_x0_y0_west() throws PositionNullException, DirectionNullException {
         PointRover positionInitial = new PointRover(0, 0);
         Rover roverInitial = new Rover(positionInitial,  Direction.West);
 
@@ -154,7 +157,7 @@ public class RoverTest {
     }
 
     @Test
-    public void should_return_east_x0_y0_when_it_go_right_since_the_position_x0_y0_south() {
+    public void should_return_east_x0_y0_when_it_go_right_since_the_position_x0_y0_south() throws PositionNullException, DirectionNullException {
         PointRover positionInitial = new PointRover(0, 0);
         Rover roverInitial = new Rover(positionInitial,  Direction.South);
 
@@ -166,7 +169,7 @@ public class RoverTest {
     }
 
     @Test
-    public void should_return_north_x0_y0_when_it_go_right_since_the_position_x0_y0_east() {
+    public void should_return_north_x0_y0_when_it_go_right_since_the_position_x0_y0_east() throws PositionNullException, DirectionNullException {
         PointRover positionInitial = new PointRover(0, 0);
         Rover roverInitial = new Rover(positionInitial,  Direction.East);
 
@@ -175,6 +178,32 @@ public class RoverTest {
 
 
         assertThat(roverInitial.moveTo( Move.Right)).isEqualTo(roverFinal);
+    }
+
+    @Test
+    public void should_return_exception_if_posoitionNull_when_the_robot_go_foward_from_south_and_the_position_initial_is_null() throws PositionNullException {
+
+        assertThatExceptionOfType(PositionNullException.class)
+                .isThrownBy(() -> {
+                    PointRover positionInitial = null;
+                    Rover roverInitial = new Rover(positionInitial,  Direction.South);
+
+                    PointRover positionFinal = new PointRover(0, 0);
+                    Rover roverFinal = new Rover(positionFinal,  Direction.South);
+                });
+    }
+
+    @Test
+    public void should_return_exception_if_directionNull_when_the_robot_go_foward_from_south_and_the_direction_is_null() throws PositionNullException {
+
+        assertThatExceptionOfType(DirectionNullException.class)
+                .isThrownBy(() -> {
+                    PointRover positionInitial = new PointRover(0, 0);
+                    Rover roverInitial = new Rover(positionInitial,  null);
+
+                    PointRover positionFinal = new PointRover(0, 0);
+                    Rover roverFinal = new Rover(positionFinal,  Direction.South);
+                });
     }
 
 
