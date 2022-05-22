@@ -1,7 +1,7 @@
 package DirectionMoveEmum;
 
 public enum Move {
-    F(),L(),B(),R();
+    Foward(), Left(), Backward(), Right();
 
     Move(){
     }

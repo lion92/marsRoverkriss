@@ -6,8 +6,8 @@ import Rover.*;
 
 public class Main {
     public static void main(String[] args) {
-        Rover rover = new Rover(new PointRover(0,0), Direction.S);
+        Rover rover = new Rover(new PointRover(0,0), Direction.South);
 
-        System.out.println(rover.moveTo(Move.F));
+        System.out.println(rover.moveTo(Move.Foward));
     }
 }

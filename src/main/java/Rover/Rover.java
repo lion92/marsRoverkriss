@@ -34,20 +34,20 @@ public class Rover {
     public Rover moveTo(Move move) {
 
        switch (move){
-           case F -> {
+           case Foward -> {
                return new MoveToFoward().moveTo(this);
            }
-           case B -> {
+           case Backward -> {
                return new MoveToBackward().moveTo(this);
            }
-           case L -> {
+           case Left -> {
                return new MoveToLeft().moveTo(this);
            }
-           case R -> {
+           case Right -> {
                return new MoveToRight().moveTo(this);
            }
        }
-       
+
         return null;
     }
 

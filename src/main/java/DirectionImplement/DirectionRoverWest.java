@@ -8,13 +8,13 @@ import abstractRover.AbstractMove;
 public class DirectionRoverWest extends AbstractMove {
     @Override
     public Rover moveTo(Rover roverInitital, Move move) {
-        if (roverInitital.getDirection().equals( Direction.S) && move.equals(Move.L)
-                || roverInitital.getDirection().equals( Direction.N) && move.equals( Move.R)
-                ||roverInitital.getDirection().equals( Direction.S) && move.equals( Move.L)) {
-            return new Rover(new PointRover(roverInitital.getXi(), roverInitital.getYi()),  Direction.W);
-        } else if (move.equals( Move.F)) {
+        if (roverInitital.getDirection().equals( Direction.South) && move.equals(Move.Left)
+                || roverInitital.getDirection().equals( Direction.Norh) && move.equals( Move.Right)
+                ||roverInitital.getDirection().equals( Direction.South) && move.equals( Move.Left)) {
+            return new Rover(new PointRover(roverInitital.getXi(), roverInitital.getYi()),  Direction.West);
+        } else if (move.equals( Move.Foward)) {
             return new Rover(new PointRover(roverInitital.getXi() + 1, roverInitital.getYi()), roverInitital.getDirection());
-        } else if (move.equals( Move.B)) {
+        } else if (move.equals( Move.Backward)) {
             return new Rover(new PointRover(roverInitital.getXi() - 1, roverInitital.getYi()), roverInitital.getDirection());
         }
         return roverInitital;

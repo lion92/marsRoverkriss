@@ -10,17 +10,17 @@ public class MoveToRight extends AbstractMove {
     @Override
     public Rover moveTo(Rover initial) {
         switch (initial.getDirection()) {
-            case N -> {
-                return new Rover(new PointRover(initial.getXi() , initial.getYi()), Direction.W);
+            case Norh -> {
+                return new Rover(new PointRover(initial.getXi() , initial.getYi()), Direction.West);
             }
-            case S -> {
-                return new Rover(new PointRover(initial.getXi() , initial.getYi()), Direction.E);
+            case South -> {
+                return new Rover(new PointRover(initial.getXi() , initial.getYi()), Direction.East);
             }
-            case E -> {
-                return new Rover(new PointRover(initial.getXi(), initial.getYi()), Direction.N);
+            case East -> {
+                return new Rover(new PointRover(initial.getXi(), initial.getYi()), Direction.Norh);
             }
-            case W -> {
-                return new Rover(new PointRover(initial.getXi() , initial.getYi()), Direction.S);
+            case West -> {
+                return new Rover(new PointRover(initial.getXi() , initial.getYi()), Direction.South);
             }
 
 
