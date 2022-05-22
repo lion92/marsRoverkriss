@@ -13,9 +13,9 @@ public class Rover {
     private final int xi;
     private final int yi;
 
-    private final String direction;
+    private final Direction direction;
 
-    public Rover(PointRover pointInitial, String direction) {
+    public Rover(PointRover pointInitial, Direction direction) {
         this.xi = pointInitial.x();
         this.yi = pointInitial.y();
         this.direction = direction;
@@ -30,22 +30,22 @@ public class Rover {
         return yi;
     }
 
-    public String getDirection() {
+    public Direction getDirection() {
         return direction;
     }
 
-    public Rover moveTo(String move) {
-        if (this.direction.equals("" + Direction.S) && move.equals("" + Move.F)
-                || this.direction.equals("" + Direction.E) && move.equals("" + Move.L)
-                || this.direction.equals("" + Direction.W) && move.equals(("" + Move.R))) {
+    public Rover moveTo(Move move) {
+        if (this.direction.equals( Direction.S) && move.equals(Move.F)
+                || this.direction.equals( Direction.E) && move.equals( Move.L)
+                || this.direction.equals(Direction.W) && move.equals( Move.R)) {
             return new DirectionRoverSouth().moveTo(this, move);
-        } else if (this.direction.equals("" + Direction.W) && move.equals("" + Move.F)
-                || this.direction.equals("" + Direction.S) && move.equals("" + Move.L)
-                || this.direction.equals("" + Direction.N) && move.equals("" + Move.R)
-                || this.direction.equals("" + Direction.S) && move.equals("" + Move.L)) {
+        } else if (this.direction.equals(Direction.W) && move.equals( Move.F)
+                || this.direction.equals( Direction.S) && move.equals( Move.L)
+                || this.direction.equals( Direction.N) && move.equals(Move.R)
+                || this.direction.equals( Direction.S) && move.equals( Move.L)) {
             return new DirectionRoverWest().moveTo(this, move);
-        } else if (this.direction.equals("" + Direction.E) && move.equals("" + Move.F)
-                || this.direction.equals("" + Direction.S) && move.equals("" + Move.R)) {
+        } else if (this.direction.equals(Direction.E) && move.equals( Move.F)
+                || this.direction.equals( Direction.S) && move.equals( Move.R)) {
             return new DirectionRoverEast().moveTo(this, move);
         }
         return new DirectionRoverNorth().moveTo(this, move);
