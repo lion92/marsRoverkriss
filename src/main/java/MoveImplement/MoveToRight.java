@@ -33,21 +33,21 @@ public class MoveToRight implements interfaceMove {
 
     @Override
     public Rover moveToWest(Rover initial)  {
-        return new Rover(new PointRover(initial.getPointRover().x() , initial.getPointRover().y()), Direction.South);
+        return new Rover(new PointRover(initial.getPointRover().positionRoverAbscisse() , initial.getPointRover().positionRoverOrdonne()), Direction.South);
     }
 
     @Override
     public Rover moveToEast(Rover initial)  {
-        return new Rover(new PointRover(initial.getPointRover().x(), initial.getPointRover().y()), Direction.North);
+        return new Rover(new PointRover(initial.getPointRover().positionRoverAbscisse(), initial.getPointRover().positionRoverOrdonne()), Direction.North);
     }
 
     @Override
     public Rover moveToSouth(Rover initial)  {
-        return new Rover(new PointRover(initial.getPointRover().x() , initial.getPointRover().y()), Direction.East);
+        return new Rover(new PointRover(initial.getPointRover().positionRoverAbscisse() , initial.getPointRover().positionRoverOrdonne()), Direction.East);
     }
 
     @Override
     public Rover moveToNorth(Rover initial)  {
-        return new Rover(new PointRover(initial.getPointRover().x() , initial.getPointRover().y()), Direction.West);
+        return new Rover(new PointRover(initial.getPointRover().positionRoverAbscisse() , initial.getPointRover().positionRoverOrdonne()), Direction.West);
     }
 }

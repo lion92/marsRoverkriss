@@ -76,7 +76,7 @@ public class Rover {
 
     @Override
     public String toString() {
-        return "" + this.pointRover.x() + " x " + this.pointRover.y()+ " y " + this.direction + " direction ";
+        return "" + this.pointRover.positionRoverAbscisse() + " x " + this.pointRover.positionRoverOrdonne()+ " y " + this.direction + " direction ";
     }
 }
 

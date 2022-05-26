@@ -34,22 +34,22 @@ public class MoveToBackward implements interfaceMove {
 
     @Override
     public Rover moveToWest(Rover initial) {
-        return new Rover(new PointRover(initial.getPointRover().x() -1, initial.getPointRover().y()), initial.getDirection());
+        return new Rover(new PointRover(initial.getPointRover().positionRoverAbscisse() -1, initial.getPointRover().positionRoverOrdonne()), initial.getDirection());
     }
 
     @Override
     public Rover moveToEast(Rover initial)  {
-        return new Rover(new PointRover(initial.getPointRover().x() +1, initial.getPointRover().y()), initial.getDirection());
+        return new Rover(new PointRover(initial.getPointRover().positionRoverAbscisse() +1, initial.getPointRover().positionRoverOrdonne()), initial.getDirection());
     }
 
     @Override
     public Rover moveToSouth(Rover initial)  {
-        return new Rover(new PointRover(initial.getPointRover().x() , initial.getPointRover().y()+1), initial.getDirection());
+        return new Rover(new PointRover(initial.getPointRover().positionRoverAbscisse() , initial.getPointRover().positionRoverOrdonne()+1), initial.getDirection());
     }
 
     @Override
     public Rover moveToNorth(Rover initial)  {
-        return new Rover(new PointRover(initial.getPointRover().x() , initial.getPointRover().y()-1), initial.getDirection());
+        return new Rover(new PointRover(initial.getPointRover().positionRoverAbscisse() , initial.getPointRover().positionRoverOrdonne()-1), initial.getDirection());
     }
 
 
