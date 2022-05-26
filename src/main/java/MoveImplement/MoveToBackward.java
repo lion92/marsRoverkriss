@@ -3,33 +3,53 @@ package MoveImplement;
 import Rover.*;
 import Rover.Exception.DirectionNullException;
 import Rover.Exception.PositionNullException;
-import abstractMove.AbstractMove;
+import InterfaceMove.interfaceMove;
 
-public class MoveToBackward implements AbstractMove {
+public class MoveToBackward implements interfaceMove {
 
 
 
     @Override
-    public Rover move(Rover initial) throws PositionNullException, DirectionNullException {
+    public Rover move(Rover initial) {
 
         switch (initial.getDirection()) {
             case North -> {
-                return new Rover(new PointRover(initial.getPointRover().x() , initial.getPointRover().y()-1), initial.getDirection());
+                return moveToNorth(initial);
             }
             case South -> {
-                return new Rover(new PointRover(initial.getPointRover().x() , initial.getPointRover().y()+1), initial.getDirection());
+                return moveToSouth(initial);
             }
             case East -> {
-                return new Rover(new PointRover(initial.getPointRover().x() +1, initial.getPointRover().y()), initial.getDirection());
+                return moveToEast(initial);
             }
             case West -> {
-                return new Rover(new PointRover(initial.getPointRover().x() -1, initial.getPointRover().y()), initial.getDirection());
+                return moveToWest(initial);
             }
 
 
         }
         return initial;
 
+    }
+
+    @Override
+    public Rover moveToWest(Rover initial) {
+        return new Rover(new PointRover(initial.getPointRover().x() -1, initial.getPointRover().y()), initial.getDirection());
+    }
+
+    @Override
+    public Rover moveToEast(Rover initial)  {
+        return new Rover(new PointRover(initial.getPointRover().x() +1, initial.getPointRover().y()), initial.getDirection());
+    }
+
+    @Override
+    public Rover moveToSouth(Rover initial)  {
+        return new Rover(new PointRover(initial.getPointRover().x() , initial.getPointRover().y()+1), initial.getDirection());
+    }
+
+    @Override
+    public Rover moveToNorth(Rover initial)  {
+        return new Rover(new PointRover(initial.getPointRover().x() , initial.getPointRover().y()-1), initial.getDirection());
     }
 
 

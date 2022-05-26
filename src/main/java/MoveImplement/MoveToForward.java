@@ -1,11 +1,11 @@
 package MoveImplement;
 
 import Rover.*;
+import InterfaceMove.interfaceMove;
 import Rover.Exception.DirectionNullException;
 import Rover.Exception.PositionNullException;
-import abstractMove.AbstractMove;
 
-public class MoveToForward implements AbstractMove {
+public class MoveToForward implements interfaceMove {
 
 
     @Override
@@ -13,16 +13,36 @@ public class MoveToForward implements AbstractMove {
 
         switch (initial.getDirection()) {
             case North, South -> {
-                return new Rover(new PointRover(initial.getPointRover().x(), calculPositionAfterMoving(initial)), initial.getDirection());
+                return moveToNorth(initial);
             }
             case East, West -> {
-                return new Rover(new PointRover(calculPositionAfterMoving(initial), initial.getPointRover().y()), initial.getDirection());
+                return moveToEast(initial);
             }
 
 
         }
         return initial;
 
+    }
+
+    @Override
+    public Rover moveToWest(Rover initial) {
+        return new Rover(new PointRover(calculPositionAfterMoving(initial), initial.getPointRover().y()), initial.getDirection());
+    }
+
+    @Override
+    public Rover moveToEast(Rover initial)  {
+        return new Rover(new PointRover(calculPositionAfterMoving(initial), initial.getPointRover().y()), initial.getDirection());
+    }
+
+    @Override
+    public Rover moveToSouth(Rover initial)  {
+        return new Rover(new PointRover(initial.getPointRover().x(), calculPositionAfterMoving(initial)), initial.getDirection());
+    }
+
+    @Override
+    public Rover moveToNorth(Rover initial)  {
+        return new Rover(new PointRover(initial.getPointRover().x(), calculPositionAfterMoving(initial)), initial.getDirection());
     }
 
     private int calculPositionAfterMoving(Rover initial) {
