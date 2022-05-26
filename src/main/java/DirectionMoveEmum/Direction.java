@@ -1,7 +1,7 @@
 package DirectionMoveEmum;
 
 public enum Direction {
-    Norh(), South(), West(), East();
+    North(), South(), West(), East();
 
     Direction() {
     }

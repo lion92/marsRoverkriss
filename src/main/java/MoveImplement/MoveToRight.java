@@ -6,23 +6,23 @@ import Rover.Exception.DirectionNullException;
 import Rover.Exception.PositionNullException;
 import abstractMove.AbstractMove;
 
-public class MoveToRight extends AbstractMove {
+public class MoveToRight implements AbstractMove {
 
 
     @Override
-    public Rover moveFrom(Rover initial) throws PositionNullException, DirectionNullException {
+    public Rover move(Rover initial) throws PositionNullException, DirectionNullException {
         switch (initial.getDirection()) {
-            case Norh -> {
-                return new Rover(new PointRover(initial.getXi() , initial.getYi()), Direction.West);
+            case North -> {
+                return new Rover(new PointRover(initial.getPointRover().x() , initial.getPointRover().y()), Direction.West);
             }
             case South -> {
-                return new Rover(new PointRover(initial.getXi() , initial.getYi()), Direction.East);
+                return new Rover(new PointRover(initial.getPointRover().x() , initial.getPointRover().y()), Direction.East);
             }
             case East -> {
-                return new Rover(new PointRover(initial.getXi(), initial.getYi()), Direction.Norh);
+                return new Rover(new PointRover(initial.getPointRover().x(), initial.getPointRover().y()), Direction.North);
             }
             case West -> {
-                return new Rover(new PointRover(initial.getXi() , initial.getYi()), Direction.South);
+                return new Rover(new PointRover(initial.getPointRover().x() , initial.getPointRover().y()), Direction.South);
             }
 
 

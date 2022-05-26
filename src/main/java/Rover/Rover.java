@@ -9,32 +9,31 @@ import Rover.Exception.PositionNullException;
 import java.util.Objects;
 
 public class Rover {
-    private final int xi;
-    private final int yi;
+
 
     private final Direction direction;
+    private final PointRover pointRover;
 
-    public Rover(PointRover pointInitial, Direction direction) throws PositionNullException, DirectionNullException {
-        if(pointInitial==null){
+    public Rover(
+            PointRover pointRover, Direction direction) {
+
+        this.pointRover = pointRover;
+        this.direction = direction;
+
+    }
+    public static Rover build(PointRover pointRover, Direction direction) throws DirectionNullException, PositionNullException {
+        if(pointRover==null){
             throw new PositionNullException("Position Null");
         }
         if(direction==null){
             throw new DirectionNullException("Direction null");
         }
-        this.xi = pointInitial.x();
-        this.yi = pointInitial.y();
-
-
-        this.direction = direction;
-
+        return new Rover(pointRover,direction);
     }
 
-    public int getXi() {
-        return xi;
-    }
 
-    public int getYi() {
-        return yi;
+    public PointRover getPointRover() {
+        return pointRover;
     }
 
     public Direction getDirection() {
@@ -45,16 +44,16 @@ public class Rover {
 
        switch (move){
            case Foward -> {
-               return new MoveToFoward().moveFrom(this);
+               return new MoveToForward().move(this);
            }
            case Backward -> {
-               return new MoveToBackward().moveFrom(this);
+               return new MoveToBackward().move(this);
            }
            case Left -> {
-               return new MoveToLeft().moveFrom(this);
+               return new MoveToLeft().move(this);
            }
            case Right -> {
-               return new MoveToRight().moveFrom(this);
+               return new MoveToRight().move(this);
            }
        }
 
@@ -65,18 +64,19 @@ public class Rover {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Rover rover)) return false;
-        return xi == rover.xi && yi == rover.yi && Objects.equals(direction, rover.direction);
+        if (o == null || getClass() != o.getClass()) return false;
+        Rover rover = (Rover) o;
+        return direction == rover.direction && Objects.equals(pointRover, rover.pointRover);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xi, yi, direction);
+        return Objects.hash(direction, pointRover);
     }
 
     @Override
     public String toString() {
-        return "" + this.xi + " x " + this.yi + " y " + this.direction + " direction ";
+        return "" + this.pointRover.x() + " x " + this.pointRover.y()+ " y " + this.direction + " direction ";
     }
 }
 

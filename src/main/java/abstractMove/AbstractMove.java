@@ -4,10 +4,8 @@ import Rover.*;
 import Rover.Exception.DirectionNullException;
 import Rover.Exception.PositionNullException;
 
-public class AbstractMove {
+public interface AbstractMove {
 
 
-    public Rover moveFrom(Rover initial) throws PositionNullException, DirectionNullException {
-        return null;
-    }
+    Rover move(Rover initial) throws PositionNullException, DirectionNullException;
 }
