@@ -200,7 +200,7 @@ public class RoverTest {
                     PointRover positionInitial = new PointRover(0, 0);
                     Rover roverInitial =  Rover.build(positionInitial, null);
 
-                   
+
                 });
     }
 
@@ -250,6 +250,22 @@ public class RoverTest {
 
 
         assertThat(roverInitial.moveTo(Move.Foward)).isEqualTo(roverFinal);
+    }
+
+    @Test
+    public void should_return_south_x0_y0_when_it_go_foward_twice_since_the_position_x0_y0_north() throws PositionNullException, DirectionNullException {
+        PointRover positionInitial = new PointRover(0, 0);
+        Rover roverInitial = Rover.build(positionInitial, Direction.North);
+
+        for (int i = 0; i < 2; i++) {
+            roverInitial=roverInitial.moveTo(Move.Foward);
+        }
+
+        PointRover positionFinal = new PointRover(0, 2);
+        Rover roverFinal = Rover.build(positionFinal, Direction.North);
+
+
+        assertThat(roverInitial).isEqualTo(roverFinal);
     }
 
 

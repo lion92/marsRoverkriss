@@ -40,7 +40,7 @@ public class Rover {
         return direction;
     }
 
-    public Rover moveTo(Move move) throws PositionNullException, DirectionNullException {
+    public Rover moveTo(Move move) {
 
        switch (move){
            case Foward -> {
