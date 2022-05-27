@@ -285,7 +285,7 @@ public class RoverTest {
 
 
         assertThat(new Drawgraph(-4,6,-4,6)
-                .grilleRover(roverInitial,commandRover,List.of(new Obstacle(0,1)))).isEqualTo(new Obstacle(0,1).toString());
+                .grilleRoverGenerator(roverInitial,commandRover,List.of(new Obstacle(0,1)))).isEqualTo(new Obstacle(0,1).toString());
     }
 
 
