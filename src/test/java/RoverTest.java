@@ -1,11 +1,14 @@
 
 import DirectionMoveEmum.Direction;
 import DirectionMoveEmum.Move;
+import DrawGraph.Drawgraph;
 import Rover.Exception.DirectionNullException;
 import Rover.Exception.PositionNullException;
 import Rover.PointRover;
 import Rover.*;
 import org.junit.jupiter.api.Test;
+
+import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
@@ -266,6 +269,23 @@ public class RoverTest {
 
 
         assertThat(roverInitial).isEqualTo(roverFinal);
+    }
+    @Test
+    public void should_return_obstacle_when_it_go_foward_twice_since_the_position_x0_y0_north_and_there_are_obstacle_x0_y1() throws PositionNullException, DirectionNullException {
+        PointRover positionInitial = new PointRover(0, 0);
+        Rover roverInitial = Rover.build(positionInitial, Direction.North);
+
+        List<Move>commandRover=List.of(Move.Foward,Move.Foward);
+
+
+
+
+
+
+
+
+        assertThat(new Drawgraph(-4,6,-4,6)
+                .grilleRover(roverInitial,commandRover,List.of(new Obstacle(0,1)))).isEqualTo(new Obstacle(0,1).toString());
     }
 
 
