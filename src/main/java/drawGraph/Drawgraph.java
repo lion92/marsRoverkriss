@@ -1,7 +1,8 @@
-package DrawGraph;
+package drawGraph;
 
-import DirectionMoveEmum.Move;
-import Rover.*;
+import directionMoveEmum.Move;
+import rover.*;
+import obstacle.Obstacle;
 
 import java.util.List;
 
@@ -34,14 +35,14 @@ public class Drawgraph {
                 }
             }
 
-            for (int beginColon = this.beginColon; beginColon < this.endColon; beginColon++) {
-                for (int beginLine = this.beginning; beginLine < this.endLine; beginLine++) {
+            for (int currentColon = this.beginColon; currentColon < this.endColon; currentColon++) {
+                for (int curentLine = this.beginning; curentLine < this.endLine; curentLine++) {
 
 
-                    if (isPositionRover(rover, beginColon, beginLine)) {
+                    if (isPositionRover(rover, currentColon, curentLine)) {
 
                         grille.append("0");
-                    } else if (isOriginGrid(beginColon,beginLine)) {
+                    } else if (isOriginGrid(currentColon,curentLine)) {
 
                         grille.append("X");
                     } else {
@@ -65,9 +66,9 @@ public class Drawgraph {
         return beginColon == 0 && line == 0;
     }
 
-    private boolean isPositionRover(Rover rover, int beginColon, int beginLine) {
+    private boolean isPositionRover(Rover rover, int currentColon, int currentLine) {
         return rover.getPointRover().positionRoverAbscisse() ==
-                beginLine && rover.getPointRover().positionRoverOrdonne() == -beginColon;
+                currentLine && rover.getPointRover().positionRoverOrdonne() == -currentColon;
     }
 
     private boolean ismeetingObstacle(Rover rover, Obstacle obstacle) {

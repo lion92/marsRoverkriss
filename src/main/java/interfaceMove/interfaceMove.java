@@ -1,8 +1,6 @@
-package InterfaceMove;
+package interfaceMove;
 
-import Rover.*;
-import Rover.Exception.DirectionNullException;
-import Rover.Exception.PositionNullException;
+import rover.*;
 
 public interface interfaceMove {
 

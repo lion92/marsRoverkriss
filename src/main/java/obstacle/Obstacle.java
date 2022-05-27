@@ -1,4 +1,4 @@
-package Rover;
+package obstacle;
 
 import java.util.Objects;
 

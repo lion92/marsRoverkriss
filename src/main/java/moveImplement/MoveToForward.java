@@ -1,9 +1,7 @@
-package MoveImplement;
+package moveImplement;
 
-import Rover.*;
-import InterfaceMove.interfaceMove;
-import Rover.Exception.DirectionNullException;
-import Rover.Exception.PositionNullException;
+import rover.*;
+import interfaceMove.interfaceMove;
 
 public class MoveToForward implements interfaceMove {
 
