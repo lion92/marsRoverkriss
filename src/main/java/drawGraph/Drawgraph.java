@@ -1,6 +1,6 @@
 package drawGraph;
 
-import directionMoveEmum.Move;
+import listDirectionMove.directionMoveEmum.Move;
 import rover.*;
 import obstacle.Obstacle;
 
@@ -25,7 +25,6 @@ public class Drawgraph {
 
     public String grilleRoverGenerator(Rover rover, List<Move> commandRover, List<Obstacle> obstacles) {
         StringBuilder grille = new StringBuilder();
-
         for (Move move : commandRover) {
             grille.append("----------------\n");
             for (Obstacle obstacle : obstacles) {
@@ -34,32 +33,41 @@ public class Drawgraph {
                     return obstacle.toString();
                 }
             }
-
             for (int currentColon = this.beginColon; currentColon < this.endColon; currentColon++) {
                 for (int curentLine = this.beginning; curentLine < this.endLine; curentLine++) {
 
-
                     if (isPositionRover(rover, currentColon, curentLine)) {
-
-                        grille.append("0");
+                        positionRover(grille);
                     } else if (isOriginGrid(currentColon,curentLine)) {
-
-                        grille.append("X");
+                        positionOrigin(grille);
                     } else {
-
-                        grille.append("x");
+                        positionPossible(grille);
                     }
-
                 }
                 grille.append("\n");
             }
-
-            rover = rover.moveTo(move);
+            rover = getRover(rover, move);
             System.out.print(rover.toString());
             grille.append("----------------");
-
         }
         return grille.toString();
+    }
+
+    private Rover getRover(Rover rover, Move move) {
+        return rover.moveTo(move);
+    }
+
+    private StringBuilder positionPossible(StringBuilder grille) {
+        return grille.append("x");
+    }
+
+    private StringBuilder positionRover(StringBuilder grille) {
+        return  grille.append("0");
+    }
+
+    private StringBuilder positionOrigin(StringBuilder grille) {
+        return grille.append("X");
+
     }
 
     private boolean isOriginGrid(int beginColon,int line) {
@@ -73,8 +81,8 @@ public class Drawgraph {
 
     private boolean ismeetingObstacle(Rover rover, Obstacle obstacle) {
         return (rover.getPointRover().positionRoverAbscisse() ==
-                obstacle.getPositionAbscisse()) && (rover.getPointRover().positionRoverOrdonne() ==
-                obstacle.getPositionOrdonne());
+                obstacle.getPointObstacle().positionAbscisse()) && (rover.getPointRover().positionRoverOrdonne() ==
+                obstacle.getPointObstacle().postionOrdonne());
     }
 
 

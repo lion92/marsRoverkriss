@@ -1,8 +1,8 @@
 package rover;
 
-import moveImplement.*;
-import directionMoveEmum.Direction;
-import directionMoveEmum.Move;
+import listDirectionMove.ListDirectionMove;
+import listDirectionMove.directionMoveEmum.Direction;
+import listDirectionMove.directionMoveEmum.Move;
 import rover.Exception.DirectionNullException;
 import rover.Exception.PositionNullException;
 
@@ -42,22 +42,7 @@ public class Rover {
 
     public Rover moveTo(Move move) {
 
-       switch (move){
-           case Foward -> {
-               return new MoveToForward().move(this);
-           }
-           case Backward -> {
-               return new MoveToBackward().move(this);
-           }
-           case Left -> {
-               return new MoveToLeft().move(this);
-           }
-           case Right -> {
-               return new MoveToRight().move(this);
-           }
-       }
-
-        return null;
+       return new ListDirectionMove().getListMove(this).get(move);
     }
 
 

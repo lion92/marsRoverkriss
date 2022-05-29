@@ -1,7 +1,8 @@
 
-import directionMoveEmum.Direction;
-import directionMoveEmum.Move;
+import listDirectionMove.directionMoveEmum.Direction;
+import listDirectionMove.directionMoveEmum.Move;
 import drawGraph.Drawgraph;
+import obstacle.PointObstacle;
 import rover.Exception.DirectionNullException;
 import rover.Exception.PositionNullException;
 import rover.PointRover;
@@ -281,7 +282,7 @@ public class RoverTest {
 
 
         assertThat(new Drawgraph(-4, 6, -4, 6)
-                .grilleRoverGenerator(roverInitial, commandRover, List.of(new Obstacle(0, 1)))).isEqualTo(new Obstacle(0, 1).toString());
+                .grilleRoverGenerator(roverInitial, commandRover, List.of(new Obstacle(new PointObstacle(0, 1)))).equals(new Obstacle((new PointObstacle(0, 1))).toString()));
     }
 
 

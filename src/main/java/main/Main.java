@@ -1,7 +1,7 @@
 package main;
 
-import directionMoveEmum.Direction;
-import directionMoveEmum.Move;
+import listDirectionMove.directionMoveEmum.Direction;
+import listDirectionMove.directionMoveEmum.Move;
 import drawGraph.Drawgraph;
 import rover.*;
 import rover.Exception.DirectionNullException;

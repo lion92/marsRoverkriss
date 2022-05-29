@@ -3,40 +3,40 @@ package obstacle;
 import java.util.Objects;
 
 public class Obstacle {
-    private final int positionAbscisse;
-    private final int positionOrdonne;
 
-    public Obstacle(int positionAbscisse, int positionOrdonne) {
-        this.positionAbscisse = positionAbscisse;
-        this.positionOrdonne = positionOrdonne;
+    private PointObstacle pointObstacle;
+
+    public Obstacle(PointObstacle pointObstacle) {
+
+        this.pointObstacle = pointObstacle;
     }
+
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Obstacle)) return false;
         Obstacle obstacle = (Obstacle) o;
-        return positionAbscisse == obstacle.positionAbscisse && positionOrdonne == obstacle.positionOrdonne;
+        return Objects.equals(pointObstacle, obstacle.pointObstacle);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(positionAbscisse, positionOrdonne);
+        return Objects.hash(pointObstacle);
+    }
+
+    public PointObstacle getPointObstacle() {
+        return pointObstacle;
+    }
+
+    public void setPointObstacle(PointObstacle pointObstacle) {
+        this.pointObstacle = pointObstacle;
     }
 
     @Override
     public String toString() {
         return "Obstacle{" +
-                "positionAbscisse=" + positionAbscisse +
-                ", positionOrdonne=" + positionOrdonne +
+                "pointObstacle=" + pointObstacle +
                 '}';
-    }
-
-    public int getPositionAbscisse() {
-        return positionAbscisse;
-    }
-
-    public int getPositionOrdonne() {
-        return positionOrdonne;
     }
 }

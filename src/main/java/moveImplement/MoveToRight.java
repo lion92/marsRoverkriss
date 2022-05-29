@@ -1,51 +1,36 @@
 package moveImplement;
 
-import directionMoveEmum.Direction;
+import listDirectionMove.ListDirectionMove;
+import listDirectionMove.directionMoveEmum.Direction;
 import rover.*;
-import interfaceMove.interfaceMove;
+import interfaceMove.InterfaceMove;
 
-public class MoveToRight implements interfaceMove {
+public class MoveToRight implements InterfaceMove {
 
 
     @Override
     public Rover move(Rover initial)  {
-        switch (initial.getDirection()) {
-            case North -> {
-                return moveToNorth(initial);
-            }
-            case South -> {
-                return moveToSouth(initial);
-            }
-            case East -> {
-                return moveToEast(initial);
-            }
-            case West -> {
-                return moveToWest(initial);
-            }
-
-
-        }
-        return initial;
+       return new ListDirectionMove().getlistDirectionRight(initial).get(initial.getDirection());
 
     }
 
     @Override
-    public Rover moveToWest(Rover initial)  {
+    public Rover moveFromWest(Rover initial)  {
         return new Rover(new PointRover(initial.getPointRover().positionRoverAbscisse() , initial.getPointRover().positionRoverOrdonne()), Direction.South);
     }
 
     @Override
-    public Rover moveToEast(Rover initial)  {
+    public Rover moveFromEast(Rover initial)  {
         return new Rover(new PointRover(initial.getPointRover().positionRoverAbscisse(), initial.getPointRover().positionRoverOrdonne()), Direction.North);
     }
 
     @Override
-    public Rover moveToSouth(Rover initial)  {
+    public Rover moveFromSouth(Rover initial)  {
         return new Rover(new PointRover(initial.getPointRover().positionRoverAbscisse() , initial.getPointRover().positionRoverOrdonne()), Direction.East);
     }
 
     @Override
-    public Rover moveToNorth(Rover initial)  {
+    public Rover moveFromNorth(Rover initial)  {
         return new Rover(new PointRover(initial.getPointRover().positionRoverAbscisse() , initial.getPointRover().positionRoverOrdonne()), Direction.West);
     }
 }

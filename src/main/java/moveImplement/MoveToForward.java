@@ -1,45 +1,36 @@
 package moveImplement;
 
+import listDirectionMove.ListDirectionMove;
 import rover.*;
-import interfaceMove.interfaceMove;
+import interfaceMove.InterfaceMove;
 
-public class MoveToForward implements interfaceMove {
+public class MoveToForward implements InterfaceMove {
 
 
     @Override
     public Rover move(Rover initial) {
 
-        switch (initial.getDirection()) {
-            case North, South -> {
-                return moveToNorth(initial);
-            }
-            case East, West -> {
-                return moveToEast(initial);
-            }
-
-
-        }
-        return initial;
+        return new ListDirectionMove().getlistDirectionForward(initial).get(initial.getDirection());
 
     }
 
     @Override
-    public Rover moveToWest(Rover initial) {
+    public Rover moveFromWest(Rover initial) {
         return new Rover(new PointRover(calculPositionAfterMoving(initial), initial.getPointRover().positionRoverOrdonne()), initial.getDirection());
     }
 
     @Override
-    public Rover moveToEast(Rover initial)  {
+    public Rover moveFromEast(Rover initial)  {
         return new Rover(new PointRover(calculPositionAfterMoving(initial), initial.getPointRover().positionRoverOrdonne()), initial.getDirection());
     }
 
     @Override
-    public Rover moveToSouth(Rover initial)  {
+    public Rover moveFromSouth(Rover initial)  {
         return new Rover(new PointRover(initial.getPointRover().positionRoverAbscisse(), calculPositionAfterMoving(initial)), initial.getDirection());
     }
 
     @Override
-    public Rover moveToNorth(Rover initial)  {
+    public Rover moveFromNorth(Rover initial)  {
         return new Rover(new PointRover(initial.getPointRover().positionRoverAbscisse(), calculPositionAfterMoving(initial)), initial.getDirection());
     }
 
