@@ -1,4 +1,4 @@
-package listDirectionMove;
+package listDirectionMove.interfaceMove;
 
 import listDirectionMove.directionMoveEmum.Direction;
 import rover.Rover;

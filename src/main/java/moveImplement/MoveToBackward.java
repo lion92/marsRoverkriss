@@ -1,9 +1,8 @@
 package moveImplement;
 
-import listDirectionMove.*;
 import listDirectionMove.directionMoveEmum.Direction;
 import rover.*;
-import interfaceMove.*;
+import listDirectionMove.interfaceMove.*;
 
 import java.util.HashMap;
 
