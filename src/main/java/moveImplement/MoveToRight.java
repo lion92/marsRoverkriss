@@ -1,14 +1,12 @@
 package moveImplement;
 
 import listDirectionMove.directionMoveEmum.Direction;
-import listDirectionMove.interfaceMove.MoveByDirection;
 import rover.*;
 import listDirectionMove.interfaceMove.InterfaceMove;
 
 import java.util.HashMap;
-import java.util.Map;
 
-public class MoveToRight implements InterfaceMove, MoveByDirection {
+public class MoveToRight implements InterfaceMove {
 
     @Override
     public Rover move(Rover initial)  {
@@ -18,32 +16,32 @@ public class MoveToRight implements InterfaceMove, MoveByDirection {
 
     @Override
     public Rover moveFromWest(Rover initial)  {
-        return new Rover(new PointRover(initial.getPointRover().positionRoverAbscisse() , initial.getPointRover().positionRoverOrdonne()), Direction.South);
+        return new Rover(new PointRover(initial.getPointRover().positionRoverAbscisse() , initial.getPointRover().positionRoverOrdonne()), Direction.SOUTH);
     }
 
     @Override
     public Rover moveFromEast(Rover initial)  {
-        return new Rover(new PointRover(initial.getPointRover().positionRoverAbscisse(), initial.getPointRover().positionRoverOrdonne()), Direction.North);
+        return new Rover(new PointRover(initial.getPointRover().positionRoverAbscisse(), initial.getPointRover().positionRoverOrdonne()), Direction.NORTH);
     }
 
     @Override
     public Rover moveFromSouth(Rover initial)  {
-        return new Rover(new PointRover(initial.getPointRover().positionRoverAbscisse() , initial.getPointRover().positionRoverOrdonne()), Direction.East);
+        return new Rover(new PointRover(initial.getPointRover().positionRoverAbscisse() , initial.getPointRover().positionRoverOrdonne()), Direction.EAST);
     }
 
     @Override
     public Rover moveFromNorth(Rover initial)  {
-        return new Rover(new PointRover(initial.getPointRover().positionRoverAbscisse() , initial.getPointRover().positionRoverOrdonne()), Direction.West);
+        return new Rover(new PointRover(initial.getPointRover().positionRoverAbscisse() , initial.getPointRover().positionRoverOrdonne()), Direction.WEST);
     }
 
     @Override
     public HashMap<Direction, Rover> getMoveByDirection(Rover initial) {
-        Map<Direction, Rover> listDirectionRight = new HashMap<>();
-            listDirectionRight.put(Direction.North,moveFromNorth(initial));
-            listDirectionRight.put(Direction.South,moveFromSouth(initial));
-            listDirectionRight.put(Direction.West,moveFromWest(initial));
-            listDirectionRight.put(Direction.East,moveFromEast(initial));
+        HashMap<Direction, Rover> listDirectionRight = new HashMap<>();
+            listDirectionRight.put(Direction.NORTH,moveFromNorth(initial));
+            listDirectionRight.put(Direction.SOUTH,moveFromSouth(initial));
+            listDirectionRight.put(Direction.WEST,moveFromWest(initial));
+            listDirectionRight.put(Direction.EAST,moveFromEast(initial));
 
-            return (HashMap<Direction, Rover>) listDirectionRight;
+            return listDirectionRight;
     }
 }

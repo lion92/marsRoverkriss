@@ -1,7 +1,7 @@
 package listDirectionMove.directionMoveEmum;
 
 public enum Direction {
-    North(), South(), West(), East();
+    NORTH(), SOUTH(), WEST(), EAST();
 
     Direction() {
     }

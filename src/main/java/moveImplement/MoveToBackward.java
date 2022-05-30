@@ -7,7 +7,7 @@ import listDirectionMove.interfaceMove.*;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MoveToBackward implements InterfaceMove, MoveByDirection {
+public class MoveToBackward implements InterfaceMove {
 
     @Override
     public Rover move(Rover initial) {
@@ -38,16 +38,16 @@ public class MoveToBackward implements InterfaceMove, MoveByDirection {
 
     private int calculPositionAfterMoving(Rover initial) {
         switch (initial.getDirection()) {
-            case North -> {
+            case NORTH -> {
                 return (initial.getPointRover().positionRoverOrdonne() - 1) % 6 == 0 ? (initial.getPointRover().positionRoverOrdonne() - 1) % 6 - 1 : initial.getPointRover().positionRoverOrdonne() -1;
             }
-            case South -> {
+            case SOUTH -> {
                 return ((initial.getPointRover().positionRoverOrdonne() + 1) % 6) == 0 ? (initial.getPointRover().positionRoverOrdonne() +1) % 6 + 1 : initial.getPointRover().positionRoverOrdonne() + 1;
             }
-            case East -> {
+            case EAST -> {
                 return (initial.getPointRover().positionRoverAbscisse() + 1) % 6 == 0 ? (initial.getPointRover().positionRoverAbscisse() + 1) % 6 + 1 : initial.getPointRover().positionRoverAbscisse() + 1;
             }
-            case West -> {
+            case WEST -> {
                 return (initial.getPointRover().positionRoverAbscisse() - 1) % 6 == 0 ? (initial.getPointRover().positionRoverAbscisse() - 1) % 6 - 1 : initial.getPointRover().positionRoverAbscisse() - 1;
             }
 
@@ -60,10 +60,10 @@ public class MoveToBackward implements InterfaceMove, MoveByDirection {
     @Override
     public HashMap<Direction, Rover> getMoveByDirection(Rover initial) {
         Map<Direction, Rover> listDirectionBackward = new HashMap<>();
-        listDirectionBackward.put(Direction.North,new MoveToBackward().moveFromNorth(initial));
-        listDirectionBackward.put(Direction.South,new MoveToBackward().moveFromSouth(initial));
-        listDirectionBackward.put(Direction.West,new MoveToBackward().moveFromWest(initial));
-        listDirectionBackward.put(Direction.East,new MoveToBackward().moveFromEast(initial));
+        listDirectionBackward.put(Direction.NORTH,moveFromNorth(initial));
+        listDirectionBackward.put(Direction.SOUTH,moveFromSouth(initial));
+        listDirectionBackward.put(Direction.WEST,moveFromWest(initial));
+        listDirectionBackward.put(Direction.EAST,moveFromEast(initial));
 
         return (HashMap<Direction, Rover>) listDirectionBackward;
     }

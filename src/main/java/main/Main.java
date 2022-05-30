@@ -11,8 +11,8 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws PositionNullException, DirectionNullException {
-        List<Move> commandRover=List.of(Move.Backward,Move.Backward, Move.Backward,Move.Backward,Move.Backward,Move.Backward,Move.Backward);
-        Rover rover = new Rover(new PointRover(0,0), Direction.East);
+        List<Move> commandRover=List.of(Move.BACKWARD,Move.BACKWARD, Move.BACKWARD,Move.BACKWARD,Move.BACKWARD,Move.BACKWARD,Move.BACKWARD);
+        Rover rover = new Rover(new PointRover(0,0), Direction.EAST);
         System.out.println(new Drawgraph(-5,6,-5,6).grilleRoverGenerator(rover, commandRover,List.of()));
 
 

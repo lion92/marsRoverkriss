@@ -2,19 +2,11 @@ package rover;
 
 import listDirectionMove.directionMoveEmum.Direction;
 import listDirectionMove.directionMoveEmum.Move;
-import moveImplement.MoveToBackward;
-import moveImplement.MoveToForward;
-import moveImplement.MoveToLeft;
-import moveImplement.MoveToRight;
 import rover.Exception.DirectionNullException;
 import rover.Exception.PositionNullException;
-
-import java.util.HashMap;
 import java.util.Objects;
 
 public class Rover {
-
-    private HashMap<Move,Rover> listMove;
     private final Direction direction;
     private final PointRover pointRover;
 

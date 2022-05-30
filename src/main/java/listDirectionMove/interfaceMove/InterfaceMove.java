@@ -1,6 +1,9 @@
 package listDirectionMove.interfaceMove;
 
+import listDirectionMove.directionMoveEmum.Direction;
 import rover.*;
+
+import java.util.HashMap;
 
 public interface InterfaceMove {
 
@@ -11,4 +14,5 @@ public interface InterfaceMove {
     Rover moveFromSouth(Rover initial);
     Rover moveFromEast(Rover initial);
     Rover moveFromWest(Rover initial);
+    HashMap<Direction, Rover> getMoveByDirection(Rover initial);
 }

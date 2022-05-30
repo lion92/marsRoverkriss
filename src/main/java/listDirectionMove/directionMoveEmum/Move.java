@@ -8,9 +8,9 @@ import moveImplement.MoveToRight;
 
 public enum Move {
     FORWARD(new MoveToForward()),
-    Left(new MoveToLeft()),
-    Backward(new MoveToBackward()),
-    Right(new MoveToRight());
+    LEFT(new MoveToLeft()),
+    BACKWARD(new MoveToBackward()),
+    RIGHT(new MoveToRight());
 
     private final InterfaceMove interfaceMove;
 

@@ -27,10 +27,10 @@ public class RoverTest {
     public void should_return_north_x0_y1_when_it_go_foward_from_the_position_x0_y0_North() throws PositionNullException, DirectionNullException {
 
         PointRover positionInitial = new PointRover(0, 0);
-        Rover roverInitial = Rover.build(positionInitial, Direction.North);
+        Rover roverInitial = Rover.build(positionInitial, Direction.NORTH);
 
         PointRover positionFinal = new PointRover(0, 1);
-        Rover roverFinal = Rover.build(positionFinal, Direction.North);
+        Rover roverFinal = Rover.build(positionFinal, Direction.NORTH);
 
 
         assertThat(roverInitial.moveTo(Move.FORWARD)).isEqualTo(roverFinal);
@@ -40,10 +40,10 @@ public class RoverTest {
     @Test
     public void should_return_east_xmoins1_y0_when_it_go_foward_from_the_position_x0_y0_east() throws PositionNullException, DirectionNullException {
         PointRover positionInitial = new PointRover(0, 0);
-        Rover roverInitial = Rover.build(positionInitial, Direction.East);
+        Rover roverInitial = Rover.build(positionInitial, Direction.EAST);
 
         PointRover positionFinal = new PointRover(-1, 0);
-        Rover roverFinal = Rover.build(positionFinal, Direction.East);
+        Rover roverFinal = Rover.build(positionFinal, Direction.EAST);
 
 
         assertThat(roverInitial.moveTo(Move.FORWARD)).isEqualTo(roverFinal);
@@ -52,10 +52,10 @@ public class RoverTest {
     @Test
     public void should_return_east_xmoins2_y0_when_it_go_foward_from_the_position_xmoins1_y0_east() throws PositionNullException, DirectionNullException {
         PointRover positionInitial = new PointRover(-1, 0);
-        Rover roverInitial = Rover.build(positionInitial, Direction.East);
+        Rover roverInitial = Rover.build(positionInitial, Direction.EAST);
 
         PointRover positionFinal = new PointRover(-2, 0);
-        Rover roverFinal = Rover.build(positionFinal, Direction.East);
+        Rover roverFinal = Rover.build(positionFinal, Direction.EAST);
 
 
         assertThat(roverInitial.moveTo(Move.FORWARD)).isEqualTo(roverFinal);
@@ -65,10 +65,10 @@ public class RoverTest {
     @Test
     public void should_return_south_x0_ymoins1_when_it_go_backward_from_the_position_x0_y0_South() throws PositionNullException, DirectionNullException {
         PointRover positionInitial = new PointRover(0, 0);
-        Rover roverInitial = Rover.build(positionInitial, Direction.South);
+        Rover roverInitial = Rover.build(positionInitial, Direction.SOUTH);
 
         PointRover positionFinal = new PointRover(0, -1);
-        Rover roverFinal = Rover.build(positionFinal, Direction.South);
+        Rover roverFinal = Rover.build(positionFinal, Direction.SOUTH);
 
 
         assertThat(roverInitial.moveTo(Move.FORWARD)).isEqualTo(roverFinal);
@@ -77,23 +77,23 @@ public class RoverTest {
     @Test
     public void should_return_south_x0_ymoins2_when_it_go_backward_from_the_position_x0_ymoins1_South() throws PositionNullException, DirectionNullException {
         PointRover positionInitial = new PointRover(0, -1);
-        Rover roverInitial = Rover.build(positionInitial, Direction.South);
+        Rover roverInitial = Rover.build(positionInitial, Direction.SOUTH);
 
         PointRover positionFinal = new PointRover(0, 1);
-        Rover roverFinal = Rover.build(positionFinal, Direction.South);
+        Rover roverFinal = Rover.build(positionFinal, Direction.SOUTH);
 
 
-        assertThat(roverInitial.moveTo(Move.Backward)).isEqualTo(roverFinal);
+        assertThat(roverInitial.moveTo(Move.BACKWARD)).isEqualTo(roverFinal);
     }
 
 
     @Test
     public void should_return_west_x1_y0_when_it_go_left_from_the_position_x0_y0_West() throws PositionNullException, DirectionNullException {
         PointRover positionInitial = new PointRover(0, 0);
-        Rover roverInitial = Rover.build(positionInitial, Direction.West);
+        Rover roverInitial = Rover.build(positionInitial, Direction.WEST);
 
         PointRover positionFinal = new PointRover(1, 0);
-        Rover roverFinal = Rover.build(positionFinal, Direction.West);
+        Rover roverFinal = Rover.build(positionFinal, Direction.WEST);
 
 
         assertThat(roverInitial.moveTo(Move.FORWARD)).isEqualTo(roverFinal);
@@ -103,86 +103,86 @@ public class RoverTest {
     @Test
     public void should_return_south_x0_y0_when_it_go_left_from_the_position_x0_y0_West() throws PositionNullException, DirectionNullException {
         PointRover positionInitial = new PointRover(0, 0);
-        Rover roverInitial = Rover.build(positionInitial, Direction.South);
+        Rover roverInitial = Rover.build(positionInitial, Direction.SOUTH);
 
         PointRover positionFinal = new PointRover(0, 0);
-        Rover roverFinal = Rover.build(positionFinal, Direction.West);
+        Rover roverFinal = Rover.build(positionFinal, Direction.WEST);
 
 
-        assertThat(roverInitial.moveTo(Move.Left)).isEqualTo(roverFinal);
+        assertThat(roverInitial.moveTo(Move.LEFT)).isEqualTo(roverFinal);
     }
 
 
     @Test
     public void should_return_south_x0_y0_when_it_go_left_from_the_position_x0_y0_east() throws PositionNullException, DirectionNullException {
         PointRover positionInitial = new PointRover(0, 0);
-        Rover roverInitial = Rover.build(positionInitial, Direction.East);
+        Rover roverInitial = Rover.build(positionInitial, Direction.EAST);
 
         PointRover positionFinal = new PointRover(0, 0);
-        Rover roverFinal = Rover.build(positionFinal, Direction.South);
+        Rover roverFinal = Rover.build(positionFinal, Direction.SOUTH);
 
 
-        assertThat(roverInitial.moveTo(Move.Left)).isEqualTo(roverFinal);
+        assertThat(roverInitial.moveTo(Move.LEFT)).isEqualTo(roverFinal);
     }
 
     @Test
     public void should_return_west_x0_y0_when_it_go_left_from_the_position_x0_y0_south() throws PositionNullException, DirectionNullException {
         PointRover positionInitial = new PointRover(0, 0);
-        Rover roverInitial = Rover.build(positionInitial, Direction.South);
+        Rover roverInitial = Rover.build(positionInitial, Direction.SOUTH);
 
         PointRover positionFinal = new PointRover(0, 0);
-        Rover roverFinal = Rover.build(positionFinal, Direction.West);
+        Rover roverFinal = Rover.build(positionFinal, Direction.WEST);
 
 
-        assertThat(roverInitial.moveTo(Move.Left)).isEqualTo(roverFinal);
+        assertThat(roverInitial.moveTo(Move.LEFT)).isEqualTo(roverFinal);
     }
 
     @Test
     public void should_return_west_x0_y0_when_it_go_right_from_the_position_x0_y0_north() throws PositionNullException, DirectionNullException {
         PointRover positionInitial = new PointRover(0, 0);
-        Rover roverInitial = Rover.build(positionInitial, Direction.North);
+        Rover roverInitial = Rover.build(positionInitial, Direction.NORTH);
 
         PointRover positionFinal = new PointRover(0, 0);
-        Rover roverFinal = Rover.build(positionFinal, Direction.West);
+        Rover roverFinal = Rover.build(positionFinal, Direction.WEST);
 
 
-        assertThat(roverInitial.moveTo(Move.Right)).isEqualTo(roverFinal);
+        assertThat(roverInitial.moveTo(Move.RIGHT)).isEqualTo(roverFinal);
     }
 
     @Test
     public void should_return_south_x0_y0_when_it_go_right_from_the_position_x0_y0_west() throws PositionNullException, DirectionNullException {
         PointRover positionInitial = new PointRover(0, 0);
-        Rover roverInitial = Rover.build(positionInitial, Direction.West);
+        Rover roverInitial = Rover.build(positionInitial, Direction.WEST);
 
         PointRover positionFinal = new PointRover(0, 0);
-        Rover roverFinal = Rover.build(positionFinal, Direction.South);
+        Rover roverFinal = Rover.build(positionFinal, Direction.SOUTH);
 
 
-        assertThat(roverInitial.moveTo(Move.Right)).isEqualTo(roverFinal);
+        assertThat(roverInitial.moveTo(Move.RIGHT)).isEqualTo(roverFinal);
     }
 
     @Test
     public void should_return_east_x0_y0_when_it_go_right_from_the_position_x0_y0_south() throws PositionNullException, DirectionNullException {
         PointRover positionInitial = new PointRover(0, 0);
-        Rover roverInitial = Rover.build(positionInitial, Direction.South);
+        Rover roverInitial = Rover.build(positionInitial, Direction.SOUTH);
 
         PointRover positionFinal = new PointRover(0, 0);
-        Rover roverFinal = Rover.build(positionFinal, Direction.East);
+        Rover roverFinal = Rover.build(positionFinal, Direction.EAST);
 
 
-        assertThat(roverInitial.moveTo(Move.Right)).isEqualTo(roverFinal);
+        assertThat(roverInitial.moveTo(Move.RIGHT)).isEqualTo(roverFinal);
     }
 
     @Test
     public void should_return_north_x0_y0_when_it_go_right_from_the_position_x0_y0_east() throws PositionNullException, DirectionNullException {
         PointRover positionInitial = new PointRover(0, 0);
-        Rover roverInitial = Rover.build(positionInitial, Direction.East);
+        Rover roverInitial = Rover.build(positionInitial, Direction.EAST);
 
         PointRover positionFinal = new PointRover(0, 0);
-        Rover roverFinal = Rover.build(positionFinal, Direction.North);
+        Rover roverFinal = Rover.build(positionFinal, Direction.NORTH);
 
 
-        assertThat(roverInitial.moveTo(Move.Right)).isEqualTo(roverFinal);
+        assertThat(roverInitial.moveTo(Move.RIGHT)).isEqualTo(roverFinal);
     }
 
     @Test
@@ -191,7 +191,7 @@ public class RoverTest {
         assertThatExceptionOfType(PositionNullException.class)
                 .isThrownBy(() -> {
                     PointRover positionInitial = null;
-                    Rover roverInitial = Rover.build(positionInitial, Direction.South);
+                    Rover roverInitial = Rover.build(positionInitial, Direction.SOUTH);
 
 
                 });
@@ -212,10 +212,10 @@ public class RoverTest {
     @Test
     public void should_return_north_x0_y0_when_it_go_foward_from_the_position_x0_y5_north() throws PositionNullException, DirectionNullException {
         PointRover positionInitial = new PointRover(0, 5);
-        Rover roverInitial = Rover.build(positionInitial, Direction.North);
+        Rover roverInitial = Rover.build(positionInitial, Direction.NORTH);
 
         PointRover positionFinal = new PointRover(0, 1);
-        Rover roverFinal = Rover.build(positionFinal, Direction.North);
+        Rover roverFinal = Rover.build(positionFinal, Direction.NORTH);
 
 
         assertThat(roverInitial.moveTo(Move.FORWARD)).isEqualTo(roverFinal);
@@ -224,10 +224,10 @@ public class RoverTest {
     @Test
     public void should_return_west_x0_y0_when_it_go_foward_from_the_position_x5_y0_west() throws PositionNullException, DirectionNullException {
         PointRover positionInitial = new PointRover(5, 0);
-        Rover roverInitial = Rover.build(positionInitial, Direction.West);
+        Rover roverInitial = Rover.build(positionInitial, Direction.WEST);
 
         PointRover positionFinal = new PointRover(1, 0);
-        Rover roverFinal = Rover.build(positionFinal, Direction.West);
+        Rover roverFinal = Rover.build(positionFinal, Direction.WEST);
 
 
         assertThat(roverInitial.moveTo(Move.FORWARD)).isEqualTo(roverFinal);
@@ -236,10 +236,10 @@ public class RoverTest {
     @Test
     public void should_return_east_x0_y0_when_it_go_foward_from_the_position_xmoins5_y0_east() throws PositionNullException, DirectionNullException {
         PointRover positionInitial = new PointRover(-5, 0);
-        Rover roverInitial = Rover.build(positionInitial, Direction.East);
+        Rover roverInitial = Rover.build(positionInitial, Direction.EAST);
 
         PointRover positionFinal = new PointRover(-1, 0);
-        Rover roverFinal = Rover.build(positionFinal, Direction.East);
+        Rover roverFinal = Rover.build(positionFinal, Direction.EAST);
 
 
         assertThat(roverInitial.moveTo(Move.FORWARD)).isEqualTo(roverFinal);
@@ -248,10 +248,10 @@ public class RoverTest {
     @Test
     public void should_return_south_x0_y0_when_it_go_foward_from_the_position_x0_ymoins5_south() throws PositionNullException, DirectionNullException {
         PointRover positionInitial = new PointRover(0, -5);
-        Rover roverInitial = Rover.build(positionInitial, Direction.South);
+        Rover roverInitial = Rover.build(positionInitial, Direction.SOUTH);
 
         PointRover positionFinal = new PointRover(0, -1);
-        Rover roverFinal = Rover.build(positionFinal, Direction.South);
+        Rover roverFinal = Rover.build(positionFinal, Direction.SOUTH);
 
 
         assertThat(roverInitial.moveTo(Move.FORWARD)).isEqualTo(roverFinal);
@@ -260,14 +260,14 @@ public class RoverTest {
     @Test
     public void should_return_south_x0_y0_when_it_go_foward_twice_from_the_position_x0_y0_north() throws PositionNullException, DirectionNullException {
         PointRover positionInitial = new PointRover(0, 0);
-        Rover roverInitial = Rover.build(positionInitial, Direction.North);
+        Rover roverInitial = Rover.build(positionInitial, Direction.NORTH);
 
         for (int i = 0; i < 2; i++) {
             roverInitial = roverInitial.moveTo(Move.FORWARD);
         }
 
         PointRover positionFinal = new PointRover(0, 2);
-        Rover roverFinal = Rover.build(positionFinal, Direction.North);
+        Rover roverFinal = Rover.build(positionFinal, Direction.NORTH);
 
 
         assertThat(roverInitial).isEqualTo(roverFinal);
@@ -276,7 +276,7 @@ public class RoverTest {
     @Test
     public void should_return_obstacle_when_it_go_foward_twice_from_the_position_x0_y0_north_and_there_are_obstacle_x0_y1() throws PositionNullException, DirectionNullException {
         PointRover positionInitial = new PointRover(0, 0);
-        Rover roverInitial = Rover.build(positionInitial, Direction.North);
+        Rover roverInitial = Rover.build(positionInitial, Direction.NORTH);
 
         List<Move> commandRover = List.of(Move.FORWARD, Move.FORWARD);
 
