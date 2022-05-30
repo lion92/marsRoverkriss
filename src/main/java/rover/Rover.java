@@ -1,16 +1,20 @@
 package rover;
 
-import listDirectionMove.ListDirectionMove;
 import listDirectionMove.directionMoveEmum.Direction;
 import listDirectionMove.directionMoveEmum.Move;
+import moveImplement.MoveToBackward;
+import moveImplement.MoveToForward;
+import moveImplement.MoveToLeft;
+import moveImplement.MoveToRight;
 import rover.Exception.DirectionNullException;
 import rover.Exception.PositionNullException;
 
+import java.util.HashMap;
 import java.util.Objects;
 
 public class Rover {
 
-
+    private HashMap<Move,Rover> listMove;
     private final Direction direction;
     private final PointRover pointRover;
 
@@ -41,8 +45,8 @@ public class Rover {
     }
 
     public Rover moveTo(Move move) {
+        return getListMove(this).get(move);
 
-       return new ListDirectionMove().getListMove(this).get(move);
     }
 
 
@@ -62,6 +66,15 @@ public class Rover {
     @Override
     public String toString() {
         return "" + this.pointRover.positionRoverAbscisse() + " x " + this.pointRover.positionRoverOrdonne()+ " y " + this.direction + " direction ";
+    }
+
+    public HashMap<Move,Rover> getListMove(Rover initial){
+        listMove=new HashMap<>();
+        listMove.put(Move.Foward,new MoveToForward().move(initial));
+        listMove.put(Move.Right,new MoveToRight().move(initial));
+        listMove.put(Move.Left,new MoveToLeft().move(initial));
+        listMove.put(Move.Backward,new MoveToBackward().move(initial));
+        return listMove;
     }
 }
 

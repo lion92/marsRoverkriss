@@ -1,16 +1,19 @@
 package moveImplement;
 
-import listDirectionMove.ListDirectionMove;
+import listDirectionMove.*;
+import listDirectionMove.directionMoveEmum.Direction;
 import rover.*;
 import interfaceMove.InterfaceMove;
 
-public class MoveToForward implements InterfaceMove {
+import java.util.HashMap;
 
+public class MoveToForward implements InterfaceMove, MoveByDirection {
+    private HashMap<Direction,Rover> listDirectionForward;
 
     @Override
     public Rover move(Rover initial) {
 
-        return new ListDirectionMove().getlistDirectionForward(initial).get(initial.getDirection());
+        return getMoveByDirection(initial).get(initial.getDirection());
 
     }
 
@@ -52,5 +55,16 @@ public class MoveToForward implements InterfaceMove {
 
         }
         return 0;
+    }
+
+    @Override
+    public HashMap<Direction, Rover> getMoveByDirection(Rover initial) {
+        listDirectionForward = new HashMap<Direction, Rover>();
+        listDirectionForward.put(Direction.North,new MoveToForward().moveFromNorth(initial));
+        listDirectionForward.put(Direction.South,new MoveToForward().moveFromSouth(initial));
+        listDirectionForward.put(Direction.West,new MoveToForward().moveFromWest(initial));
+        listDirectionForward.put(Direction.East,new MoveToForward().moveFromEast(initial));
+
+        return listDirectionForward;
     }
 }
