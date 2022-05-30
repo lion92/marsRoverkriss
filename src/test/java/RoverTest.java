@@ -33,7 +33,7 @@ public class RoverTest {
         Rover roverFinal = Rover.build(positionFinal, Direction.North);
 
 
-        assertThat(roverInitial.moveTo(Move.Foward)).isEqualTo(roverFinal);
+        assertThat(roverInitial.moveTo(Move.FORWARD)).isEqualTo(roverFinal);
 
     }
 
@@ -46,7 +46,7 @@ public class RoverTest {
         Rover roverFinal = Rover.build(positionFinal, Direction.East);
 
 
-        assertThat(roverInitial.moveTo(Move.Foward)).isEqualTo(roverFinal);
+        assertThat(roverInitial.moveTo(Move.FORWARD)).isEqualTo(roverFinal);
     }
 
     @Test
@@ -58,7 +58,7 @@ public class RoverTest {
         Rover roverFinal = Rover.build(positionFinal, Direction.East);
 
 
-        assertThat(roverInitial.moveTo(Move.Foward)).isEqualTo(roverFinal);
+        assertThat(roverInitial.moveTo(Move.FORWARD)).isEqualTo(roverFinal);
     }
 
 
@@ -71,7 +71,7 @@ public class RoverTest {
         Rover roverFinal = Rover.build(positionFinal, Direction.South);
 
 
-        assertThat(roverInitial.moveTo(Move.Foward)).isEqualTo(roverFinal);
+        assertThat(roverInitial.moveTo(Move.FORWARD)).isEqualTo(roverFinal);
     }
 
     @Test
@@ -96,7 +96,7 @@ public class RoverTest {
         Rover roverFinal = Rover.build(positionFinal, Direction.West);
 
 
-        assertThat(roverInitial.moveTo(Move.Foward)).isEqualTo(roverFinal);
+        assertThat(roverInitial.moveTo(Move.FORWARD)).isEqualTo(roverFinal);
     }
 
 
@@ -218,7 +218,7 @@ public class RoverTest {
         Rover roverFinal = Rover.build(positionFinal, Direction.North);
 
 
-        assertThat(roverInitial.moveTo(Move.Foward)).isEqualTo(roverFinal);
+        assertThat(roverInitial.moveTo(Move.FORWARD)).isEqualTo(roverFinal);
     }
 
     @Test
@@ -230,7 +230,7 @@ public class RoverTest {
         Rover roverFinal = Rover.build(positionFinal, Direction.West);
 
 
-        assertThat(roverInitial.moveTo(Move.Foward)).isEqualTo(roverFinal);
+        assertThat(roverInitial.moveTo(Move.FORWARD)).isEqualTo(roverFinal);
     }
 
     @Test
@@ -242,7 +242,7 @@ public class RoverTest {
         Rover roverFinal = Rover.build(positionFinal, Direction.East);
 
 
-        assertThat(roverInitial.moveTo(Move.Foward)).isEqualTo(roverFinal);
+        assertThat(roverInitial.moveTo(Move.FORWARD)).isEqualTo(roverFinal);
     }
 
     @Test
@@ -254,7 +254,7 @@ public class RoverTest {
         Rover roverFinal = Rover.build(positionFinal, Direction.South);
 
 
-        assertThat(roverInitial.moveTo(Move.Foward)).isEqualTo(roverFinal);
+        assertThat(roverInitial.moveTo(Move.FORWARD)).isEqualTo(roverFinal);
     }
 
     @Test
@@ -263,7 +263,7 @@ public class RoverTest {
         Rover roverInitial = Rover.build(positionInitial, Direction.North);
 
         for (int i = 0; i < 2; i++) {
-            roverInitial = roverInitial.moveTo(Move.Foward);
+            roverInitial = roverInitial.moveTo(Move.FORWARD);
         }
 
         PointRover positionFinal = new PointRover(0, 2);
@@ -278,7 +278,7 @@ public class RoverTest {
         PointRover positionInitial = new PointRover(0, 0);
         Rover roverInitial = Rover.build(positionInitial, Direction.North);
 
-        List<Move> commandRover = List.of(Move.Foward, Move.Foward);
+        List<Move> commandRover = List.of(Move.FORWARD, Move.FORWARD);
 
 
         assertThat(new Drawgraph(-4, 6, -4, 6)

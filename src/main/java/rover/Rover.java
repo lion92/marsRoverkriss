@@ -45,7 +45,8 @@ public class Rover {
     }
 
     public Rover moveTo(Move move) {
-        return getListMove(this).get(move);
+
+        return move.getInterfaceMove().move(this);
 
     }
 
@@ -68,13 +69,6 @@ public class Rover {
         return "" + this.pointRover.positionRoverAbscisse() + " x " + this.pointRover.positionRoverOrdonne()+ " y " + this.direction + " direction ";
     }
 
-    public HashMap<Move,Rover> getListMove(Rover initial){
-        listMove=new HashMap<>();
-        listMove.put(Move.Foward,new MoveToForward().move(initial));
-        listMove.put(Move.Right,new MoveToRight().move(initial));
-        listMove.put(Move.Left,new MoveToLeft().move(initial));
-        listMove.put(Move.Backward,new MoveToBackward().move(initial));
-        return listMove;
-    }
+
 }
 

@@ -6,5 +6,5 @@ import rover.Rover;
 import java.util.HashMap;
 
 public interface MoveByDirection {
-    public HashMap<Direction, Rover> getMoveByDirection(Rover initial);
+    HashMap<Direction, Rover> getMoveByDirection(Rover initial);
 }

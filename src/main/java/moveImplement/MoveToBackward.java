@@ -5,9 +5,9 @@ import rover.*;
 import listDirectionMove.interfaceMove.*;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class MoveToBackward implements InterfaceMove, MoveByDirection {
-    private HashMap<Direction,Rover> listDirectionBackward;
 
     @Override
     public Rover move(Rover initial) {
@@ -59,12 +59,12 @@ public class MoveToBackward implements InterfaceMove, MoveByDirection {
 
     @Override
     public HashMap<Direction, Rover> getMoveByDirection(Rover initial) {
-        listDirectionBackward = new HashMap<Direction, Rover>();
+        Map<Direction, Rover> listDirectionBackward = new HashMap<>();
         listDirectionBackward.put(Direction.North,new MoveToBackward().moveFromNorth(initial));
         listDirectionBackward.put(Direction.South,new MoveToBackward().moveFromSouth(initial));
         listDirectionBackward.put(Direction.West,new MoveToBackward().moveFromWest(initial));
         listDirectionBackward.put(Direction.East,new MoveToBackward().moveFromEast(initial));
 
-        return listDirectionBackward;
+        return (HashMap<Direction, Rover>) listDirectionBackward;
     }
 }
