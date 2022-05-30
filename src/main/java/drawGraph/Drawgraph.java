@@ -25,32 +25,58 @@ public class Drawgraph {
 
     public String grilleRoverGenerator(Rover rover, List<Move> commandRover, List<Obstacle> obstacles) {
         StringBuilder grille = new StringBuilder();
+
         for (Move move : commandRover) {
+            rover = getRoverAfterMoving(rover, move);
             grille.append("----------------\n");
             for (Obstacle obstacle : obstacles) {
-                if (ismeetingObstacle(rover, obstacle)
-                ) {
+                if (detectionObstacle(rover, obstacle)) {
                     return obstacle.toString();
-                }
+                };
             }
-            for (int currentColon = this.beginColon; currentColon < this.endColon; currentColon++) {
-                for (int curentLine = this.beginning; curentLine < this.endLine; curentLine++) {
+            currentCollone(rover, grille);
 
-                    if (isPositionRover(rover, currentColon, curentLine)) {
-                        positionRover(grille);
-                    } else if (isOriginGrid(currentColon,curentLine)) {
-                        positionOrigin(grille);
-                    } else {
-                        positionPossible(grille);
-                    }
-                }
-                grille.append("\n");
-            }
-            rover = getRover(rover, move);
             System.out.print(rover.toString());
             grille.append("----------------");
         }
         return grille.toString();
+    }
+
+    private Rover getRoverAfterMoving(Rover rover, Move move) {
+        rover = getRover(rover, move);
+        return rover;
+    }
+
+    private void currentCollone(Rover rover, StringBuilder grille) {
+        for (int currentColon = this.beginColon; currentColon < this.endColon; currentColon++) {
+            currentline(rover, grille, currentColon);
+            grille.append("\n");
+        }
+    }
+
+    private void currentline(Rover rover, StringBuilder grille, int currentColon) {
+        for (int curentLine = this.beginning; curentLine < this.endLine; curentLine++) {
+
+            pointGrille(rover, grille, currentColon, curentLine);
+        }
+    }
+
+    private boolean detectionObstacle(Rover rover, Obstacle obstacle) {
+        if (ismeetingObstacle(rover, obstacle)
+        ) {
+            return true;
+        }
+        return false;
+    }
+
+    private void pointGrille(Rover rover, StringBuilder grille, int currentColon, int curentLine) {
+        if (isPositionRover(rover, currentColon, curentLine)) {
+            positionRover(grille);
+        } else if (isOriginGrid(currentColon, curentLine)) {
+            positionOrigin(grille);
+        } else {
+            positionPossible(grille);
+        }
     }
 
     private Rover getRover(Rover rover, Move move) {
@@ -58,7 +84,7 @@ public class Drawgraph {
     }
 
     private StringBuilder positionPossible(StringBuilder grille) {
-        return grille.append("x");
+        return grille.append(".");
     }
 
     private StringBuilder positionRover(StringBuilder grille) {
