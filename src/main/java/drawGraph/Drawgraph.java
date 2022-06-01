@@ -5,6 +5,7 @@ import rover.*;
 import obstacle.Obstacle;
 
 import java.util.List;
+import java.util.stream.IntStream;
 
 public class Drawgraph {
 
@@ -50,11 +51,13 @@ public class Drawgraph {
     private void currentCollone(Rover rover, StringBuilder grille) {
         for (int currentColon = this.beginColon; currentColon < this.endColon; currentColon++) {
             currentline(rover, grille, currentColon);
-            grille.append("\n");
+
         }
     }
 
     private void currentline(Rover rover, StringBuilder grille, int currentColon) {
+        IntStream stream = IntStream.range(this.beginning, this.endLine);
+
         for (int curentLine = this.beginning; curentLine < this.endLine; curentLine++) {
 
             pointGrille(rover, grille, currentColon, curentLine);
