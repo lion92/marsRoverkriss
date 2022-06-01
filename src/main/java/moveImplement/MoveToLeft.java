@@ -10,12 +10,7 @@ import java.util.Map;
 public class MoveToLeft implements InterfaceMove {
 
 
-    @Override
-    public Rover move(Rover initial)  {
 
-        return getMoveByDirection(initial).get(initial.getDirection());
-
-    }
 
     @Override
     public Rover moveFromWest(Rover initial)  {
@@ -37,14 +32,5 @@ public class MoveToLeft implements InterfaceMove {
         return new Rover(new PointRover(initial.getPointRover().positionRoverAbscisse() , initial.getPointRover().positionRoverOrdonne()), Direction.EAST);
     }
 
-    @Override
-    public Map<Direction, Rover> getMoveByDirection(Rover initial) {
-        Map<Direction, Rover> listDirectionLeft = new HashMap<>();
-        listDirectionLeft.put(Direction.NORTH,moveFromNorth(initial));
-        listDirectionLeft.put(Direction.SOUTH,moveFromSouth(initial));
-        listDirectionLeft.put(Direction.WEST,moveFromWest(initial));
-        listDirectionLeft.put(Direction.EAST,moveFromEast(initial));
 
-        return (HashMap<Direction, Rover>) listDirectionLeft;
-    }
 }
