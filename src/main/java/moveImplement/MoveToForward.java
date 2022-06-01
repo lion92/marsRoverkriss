@@ -57,13 +57,13 @@ public class MoveToForward implements InterfaceMove {
     }
 
     @Override
-    public HashMap<Direction, Rover> getMoveByDirection(Rover initial) {
+    public Map<Direction, Rover> getMoveByDirection(Rover initial) {
         Map<Direction, Rover> listDirectionForward = new HashMap<>();
         listDirectionForward.put(Direction.NORTH,moveFromNorth(initial));
         listDirectionForward.put(Direction.SOUTH,moveFromSouth(initial));
         listDirectionForward.put(Direction.WEST,moveFromWest(initial));
         listDirectionForward.put(Direction.EAST,moveFromEast(initial));
 
-        return (HashMap<Direction, Rover>) listDirectionForward;
+        return listDirectionForward;
     }
 }

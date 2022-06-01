@@ -58,7 +58,7 @@ public class MoveToBackward implements InterfaceMove {
 
 
     @Override
-    public HashMap<Direction, Rover> getMoveByDirection(Rover initial) {
+    public Map<Direction, Rover> getMoveByDirection(Rover initial) {
         Map<Direction, Rover> listDirectionBackward = new HashMap<>();
         listDirectionBackward.put(Direction.NORTH,moveFromNorth(initial));
         listDirectionBackward.put(Direction.SOUTH,moveFromSouth(initial));

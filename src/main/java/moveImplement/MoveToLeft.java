@@ -12,6 +12,8 @@ public class MoveToLeft implements InterfaceMove {
 
     @Override
     public Rover move(Rover initial)  {
+        Direction newDirection = initial.getDirection().turnLeft();
+        return new Rover(initial.getPointRover(), newDirection);
         return getMoveByDirection(initial).get(initial.getDirection());
 
     }
@@ -37,7 +39,7 @@ public class MoveToLeft implements InterfaceMove {
     }
 
     @Override
-    public HashMap<Direction, Rover> getMoveByDirection(Rover initial) {
+    public Map<Direction, Rover> getMoveByDirection(Rover initial) {
         Map<Direction, Rover> listDirectionLeft = new HashMap<>();
         listDirectionLeft.put(Direction.NORTH,moveFromNorth(initial));
         listDirectionLeft.put(Direction.SOUTH,moveFromSouth(initial));

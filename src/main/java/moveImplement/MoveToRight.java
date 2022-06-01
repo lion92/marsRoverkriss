@@ -5,6 +5,7 @@ import rover.*;
 import listDirectionMove.interfaceMove.InterfaceMove;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class MoveToRight implements InterfaceMove {
 
@@ -35,7 +36,7 @@ public class MoveToRight implements InterfaceMove {
     }
 
     @Override
-    public HashMap<Direction, Rover> getMoveByDirection(Rover initial) {
+    public Map<Direction, Rover> getMoveByDirection(Rover initial) {
         HashMap<Direction, Rover> listDirectionRight = new HashMap<>();
             listDirectionRight.put(Direction.NORTH,moveFromNorth(initial));
             listDirectionRight.put(Direction.SOUTH,moveFromSouth(initial));
