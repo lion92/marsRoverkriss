@@ -37,10 +37,7 @@ public class Rover {
     }
 
     public Rover moveTo(Move move) {
-if(move == FORWARD)
-    pointRover = direction.mmoveForward(pointRover)
-            if(LEFT)
-                direction = direction.turnLeft();
+
         return move.getInterfaceMove().move(this);
 
     }

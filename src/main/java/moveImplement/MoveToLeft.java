@@ -12,8 +12,7 @@ public class MoveToLeft implements InterfaceMove {
 
     @Override
     public Rover move(Rover initial)  {
-        Direction newDirection = initial.getDirection().turnLeft();
-        return new Rover(initial.getPointRover(), newDirection);
+
         return getMoveByDirection(initial).get(initial.getDirection());
 
     }
